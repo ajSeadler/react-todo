@@ -93,11 +93,11 @@ function Home() {
         <section className="contact mb-5">
           <h2>Contact Us</h2>
           <p>
-            Address: 123 Main Street, Cityville, State, ZIP
+            Address: 123 Baker Street, Kewlsville, NE, 40220
             <br />
             Phone: (555) 123-4567
             <br />
-            Email: info@sushiandpizzahouse.com
+            Email: contact@cntpns.com
           </p>
         </section>
       </main>
