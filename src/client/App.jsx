@@ -1,15 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import Login from './components/Login';
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 
 
 function App() {
-  
 
   return (
-    <div className='App'>
-     Collin and Tony's house of Sushi and Pizza
-    </div>
+    <>
+      
+      <Routes>
+        <Route path ="/" element={<Home />} />
+        
+      </Routes>
+      
+    </>
   );
 }
 

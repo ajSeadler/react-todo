@@ -15,4 +15,58 @@
   width: 250px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.specials {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.special-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.about-us,
+.contact {
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* Add more styling for other elements if needed */
