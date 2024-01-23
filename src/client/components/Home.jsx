@@ -14,6 +14,7 @@ function Home() {
       </header>
       <main>
         <section className="specials row justify-content-around mb-5">
+          {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
           <h1>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
             <div className="card p-3">
@@ -52,6 +53,7 @@ function Home() {
         </section>
 
         <section className="about-us mb-5">
+          {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
           <h2>About Us</h2>
           <p>
             We at Collin and Tony's House of Sushi and Pizza take pride in
@@ -65,7 +67,7 @@ function Home() {
             better Collin and Tony.
           </p>
         </section>
-        {/* // at somepoint we will make a menu component and link a route to it, but i just did this for now.  */}
+        {/* =====================at somepoint we will make a menu component and link a route to it, but i just did this for now.================== */}
         <section className="menu mb-5">
           <h2>Our Menu</h2>
           <div className="row">
