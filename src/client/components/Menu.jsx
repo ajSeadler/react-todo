@@ -8,9 +8,12 @@ export default function Menu() {
     <>
     <h1>Our Menu!</h1>
     <h2>Drinks</h2>
+    {/* mapping over the drinks array, we'll do so again with the other sections */}
     {drinksArray.map((item, index) => (
         <div key={index}>
-          <img src={item.image} alt="Asahi Super Dry" />
+          {/* once we get into styling, we'll have the image and maybe the title on the front of the card and then when the user clicks on said card it will flip over to display the price and description. */}
+          {/* Image is super large on the page, we'll style it within the card */}
+          <img src={item.image} alt="A delicious beverage" />
           <p>{item.title}</p>
           <p>Price: {item.price}</p>
           <p>{item.description}</p>
