@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Menu() {
   return (
     <>
-    <h1>Our Menu!</h1>
+    <h1 className="display-4 text-center">Our Menu!</h1>
     <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100">
     <h2>Drinks</h2>
     {/* mapping over the drinks array, we'll do so again with the other sections */}
