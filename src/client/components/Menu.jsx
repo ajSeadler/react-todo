@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Menu() {
   return (
     <>
+    {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
     <h1 className="display-4 text-center">Our Menu!</h1>
     <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100">
     <h2>Drinks</h2>
