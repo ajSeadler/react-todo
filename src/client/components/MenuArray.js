@@ -16,10 +16,14 @@ const menuArray = [
     {"item": "4", "title": "Bruschetta", "price": "8.99", "image": "https://www.allrecipes.com/thmb/YnD6s0OqDK6Mt4jqcflf7cVXn9o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/54165-Balsamic-Bruschetta-mfs_001-e2cfc398086842038eeb634eab588ef4.jpg", "description": "Garlic herb crostinis topped with ripe, diced Roma tomatoes, fresh sweet basil, extra virgin olive oil and a drizzle of honey balsamic reduction."},
     {"item": "5", "title": "Chicken Yakatori", "price": "12.99", "image": "https://www.thespruceeats.com/thmb/3EoSHGG8wO_FuPgnEj8xZoehbA4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chickenyakitori-589ddda65f9b58819c878628.jpeg", "description": "Grilled chicken skewers made from bite sized pieces of meat from all different parts of the chicken, such as the breasts, thighs, skin, liver and other innards.  Isn't that an appetizing word, innards?"},
     {"item": "6", "title": "Antipasto Platter", "price": "12.99", "image": "https://www.carolynscooking.com/wp-content/uploads/2022/01/Antipasto-Platter-2-500x500.jpg", "description": "Cheese, peppers, olives, various sliced deli meats and such.  Gabagool, that's a fun one.  Don't let it touch regular pasto or we all die."}
-  ]
+  ],
+  [
+    {"item": "1", "title": "California Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/6/item-900000000167871256_1694640112.png?size=medium", "price": "3.99", "description": "Six pieces. Imitation crab, avocado, cucumber, and sesame seeds.  Also includes free plane ticket to California."}
+  ],
 ]
 
 const drinksArray = menuArray[0];
 const appsArray = menuArray[1];
+const rollsArray = menuArray[2];
 
-export { menuArray, drinksArray, appsArray };
+export { menuArray, drinksArray, appsArray, rollsArray };
