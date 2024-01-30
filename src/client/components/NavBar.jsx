@@ -8,7 +8,7 @@ export default function NavBar() {
     {/* Chose basic dark tempelate.  Once we settle on a color scheme and all that jazz we can greatly modify the basic a$$ bootstrap stuff */}
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">Collin And Tony's House Of Sushi and Pizza</Navbar.Brand>
+          <Navbar.Brand href="/">C T S P</Navbar.Brand>
           <Nav className="me-auto">
             {/* Starting with these three basic pages, we can add more.  Maybe like a page for private parties or something?  An events calendar we can try and import from google calendars or something?  I dunno, just ideas! */}
             <Nav.Link href="/menu">Menu</Nav.Link>
