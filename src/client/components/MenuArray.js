@@ -19,7 +19,8 @@ const menuArray = [
   ],
   [
     {"item": "1", "title": "California Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/6/item-900000000167871256_1694640112.png?size=medium", "price": "3.99", "description": "Six pieces. Imitation crab, avocado, cucumber, and sesame seeds.  Also includes free plane ticket to California."},
-    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"}
+    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"},
+    
   ],
 ]
 

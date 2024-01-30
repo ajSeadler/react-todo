@@ -2,16 +2,28 @@
 // I'm thinking, in our data file, we could have sections for like drinks, apps, etc.  Then we just fetch and map out each section into individual cards and such
 
 import { drinksArray, appsArray, rollsArray } from "./MenuArray";
+import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
-    <h1 className="display-4 text-center">Our Menu!</h1>
+    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+        <Navbar.Brand href="#home">Our Menu!</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#drinks">Drinks</Nav.Link>
+            <Nav.Link href="#appetizers">Appetizers</Nav.Link>
+            <Nav.Link href="#rolls">Sushi Rolls</Nav.Link>
+            {/* Add more Nav.Link items as needed for other sections */}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
         <h2>Drinks</h2>
-        <div className="row">
+        <div className="row" id="drinks">
           {/* Mapping over the drinks array */}
           {drinksArray.map((item, index) => (
             <div key={index} className="col-md-6 col-lg-6 mb-4">
@@ -31,7 +43,7 @@ export default function Menu() {
           ))}
         </div>
       <h2>Appetizers</h2>
-      <div className="row">
+      <div className="row" id="appetizers">
       {appsArray.map((item, index) => (
         <div key={index} className="col-md-6 col-lg-6 mb-4">
          <div className="card p-3">
@@ -52,7 +64,7 @@ export default function Menu() {
       ))}
       </div>
       <h2>Sushi Rolls</h2>
-      <div className="row">
+      <div className="row" id="rolls">
       {rollsArray.map((item, index) => (
         <div key={index} className="col-md-6 col-lg-6 mb-4">
          <div className="card p-3">
