@@ -21,18 +21,27 @@ const menuArray = [
   {"item": "2", "title": "Minestrone", "image": "https://www.ambitiouskitchen.com/wp-content/uploads/2020/02/Classic-Minestrone-Soup-5.jpg", "description": "Bada bing, bada boom, whaddaya say whaddya know, fuggetabout it gabagool.  This hearty soup has beans and meat and a rich tomato based broth.", "price": "4.99" },
   {"item": "3", "title": "Pork Belly Tonkotu Hell Ramen", "image": "https://cdn.vox-cdn.com/thumbor/8EWRkiuZ6ZWRopakFSLU5FRPbYs=/0x0:4000x2667/1200x900/filters:focal(1680x1014:2320x1654)/cdn.vox-cdn.com/uploads/chorus_image/image/56845029/52594509335_1e95da7d87_o.49.jpg", "price": "13.99", "description": "Rich tonkotsu broth served with house made noodles, house slaughtered pork belly, an egg we left in the sun for several days, and whatever vegetables we have leftover from less profitable meals.  We also dump SO MUCH chili oil in this thing, it will absolutely destroy your insides."},
   {"item": "4", "title": "Stracciatella", "image": "https://www.foodandwine.com/thmb/fZe2sSZ2WC8ewVc7TfRvk1hmQnk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/stracciatella-XL-RECIPE0317-d23669b7288b4f1a93590ae3744818b9.jpg", "price": "5.99", "description": "Italian version of Egg Drop soup, which the Japanese side of the establishment would not serve due to long standing racial animus tracing back literally thousands of years.  Anyway, this soup combines shredded chicken, spinach, basil, peas, grated Parmigiano-Reggiano, and eggs."},
-  {"item": "5", "title": "Seaweed Salad", "price": "7.99", "image": "https://images.kitchenstories.io/recipeImages/36_02_JapaneseSeaweedSalad_final.jpg", "description": "Collin and Tony personally dived into the ocean off the coast of Kyoto, which we're relatively sure is coastal, to harvest the seaweed to make this delicious and nutrious salad.  It does have sesame seeds so if you're allergic to this this will kill you.  Which is either a positive or a negative depending on where you are in your life."}
+  {"item": "5", "title": "Seaweed Salad", "price": "7.99", "image": "https://images.kitchenstories.io/recipeImages/36_02_JapaneseSeaweedSalad_final.jpg", "description": "Collin and Tony personally dived into the ocean off the coast of Kyoto, which we're relatively sure is coastal, to harvest the seaweed to make this delicious and nutrious salad.  It does have sesame seeds so if you're allergic to this this will kill you.  Which is either a positive or a negative depending on where you are in your life."},
+  {"item": "6", "title": "Caeser Salad", "image": "https://www.foodandwine.com/thmb/KfNlN-jRv_g0cvRr-i5SNIfrOrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vietnamese-caesar-salad-with-anchovy-croutons-FT-RECIPE0819-9b4cf0b4fe404da8b2ba1ac17edfd156.jpg", "price": "9.99", "description": "Do you know how to spell caeser?  I spelled it wrong the first time.  Anyway, this is romaine lettuce with a creamy dressing and some croutons and you know the deal.  It has anchovies too, which we will not be taking out.  They're delicious, and you're both wrong and weak if you disagree."}
 
 ],
   [
     {"item": "1", "title": "California Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/6/item-900000000167871256_1694640112.png?size=medium", "price": "3.99", "description": "Six pieces. Imitation crab, avocado, cucumber, and sesame seeds.  Also includes free plane ticket to California."},
-    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"}
+    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"},
+    {"item": "3", "title": "Salmon Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/7/item-900000000184061297_1694483102.png?size=medium", "price": "5.99", "description": "Six pieces. Fresh salmon, and sesame seeds"},
+    {"item": "4", "title": "Spicy Salmon Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/1/item-900000000184062201_1694640844.png?size=medium", "price": "6.99", "description": "Six pieces. Spicy salmon, avocado, cucumber roll wrapped with tempura crunch topped with spicy mayo, and sesame seeds"},
+    {"item": "5", "title": "Tuna Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184062203_1694475788.png?size=medium", "price": "5.99", "description": "Six pieces. Fresh tuna, and sesame seeds"},
+    {"item": "6", "title": "Spicy Tuna Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/7/item-900000000184062207_1694397587.png?size=medium", "price": "3.99", "description": "Six pieces. Ground whole tuna mixed with house spicy tuna sauce, and sesame seeds.  I don't know why this cheaper than a regular tuna roll, but take advantage of it"}
   ],
+  [
+    {"item": "1", "title": "Nama Sake Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/8/item-900000000206392258_1694384758.png?size=medium", "price": "1.99/piece", "description": "Fresh Salmon"}
+  ]
 ]
 
 const drinksArray = menuArray[0];
 const appsArray = menuArray[1];
 const soupSaladArray = menuArray[2];
 const rollsArray = menuArray[3];
+const nigiriArray = menuArray[4];
 
-export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray };
+export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray };

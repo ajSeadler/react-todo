@@ -16,6 +16,17 @@
   margin-top: 50px; /* Adjust as needed */
 }
 
+.nav-link {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 #comp-img{
   width: 250px;
 }
