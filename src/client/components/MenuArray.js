@@ -34,7 +34,9 @@ const menuArray = [
     {"item": "6", "title": "Spicy Tuna Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/7/item-900000000184062207_1694397587.png?size=medium", "price": "3.99", "description": "Six pieces. Ground whole tuna mixed with house spicy tuna sauce, and sesame seeds.  I don't know why this cheaper than a regular tuna roll, but take advantage of it"}
   ],
   [
-    {"item": "1", "title": "Nama Sake Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/8/item-900000000206392258_1694384758.png?size=medium", "price": "1.99/piece", "description": "Fresh Salmon"}
+    {"item": "1", "title": "Nama Sake Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/8/item-900000000206392258_1694384758.png?size=medium", "price": "1.99/piece", "description": "Fresh Salmon"},
+    {"item": "2", "title": "Maguro Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/9/item-900000000209639369_1694483013.png?size=medium", "price": "1.99/piece", "description": "Fresh Tuna"},
+    {"item": "3", "title": "Hamachi Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000209715163_1694640582.png?size=medium", "description": "Fresh yellowtail", "price": "1.99/piece"}
   ]
 ]
 

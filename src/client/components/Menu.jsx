@@ -23,30 +23,30 @@ export default function Menu() {
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
         <h2>Drinks</h2>
-        <div className="row" id="drinks">
+        <div className="row justify-content-center" id="drinks">
           {/* Mapping over the drinks array */}
           {drinksArray.map((item, index) => (
-            <div key={index} className="col-md-6 col-lg-6 mb-4">
-              <div className="card p-3">
-                <img
-                  src={item.image}
-                  className="card-img-top menu-img"
-                  alt="A delicious beverage"
-                />
-                <div className="card-body">
-                  <h3 className="card-title menu-title">{item.title}</h3>
-                  <p className="card-text">{item.description}</p>
-                  <p className="card-text">Price: ${item.price}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+  <div key={index} className="col-md-3 mb-4">
+    <div className="card p-3 d-flex flex-column justify-content-between">
+      <img
+        src={item.image}
+        className="card-img-top menu-img"
+        alt="A delicious beverage"
+      />
+      <div className="card-body">
+        <h3 className="card-title menu-title">{item.title}</h3>
+        <p className="card-text">{item.description}</p>
+      </div>
+      <p className="card-text mt-auto">Price: ${item.price}</p>
+    </div>
+  </div>
+))}
         </div>
       <h2>Appetizers</h2>
-      <div className="row" id="apps">
+      <div className="row justify-content-center" id="apps">
       {appsArray.map((item, index) => (
-        <div key={index} className="col-md-6 col-lg-6 mb-4">
-         <div className="card p-3">
+        <div key={index} className="col-md-3 mb-4">
+         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -57,16 +57,16 @@ export default function Menu() {
              <p className="card-text">
                {item.description}
              </p>
-             <p className="card-text">Price: ${item.price}</p>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
          </div>
        </div>
       ))}
       </div>
       <h2>Soup/Salad</h2>
-      <div className="row" id="soupSalad">
+      <div className="row justify-content-center" id="soupSalad">
       {soupSaladArray.map((item, index) => (
-        <div key={index} className="col-md-6 col-lg-6 mb-4">
+        <div key={index} className="col-md-3 mb-4">
          <div className="card p-3">
            <img
              src={item.image}
@@ -85,9 +85,9 @@ export default function Menu() {
       ))}
       </div>
       <h2>Sushi Rolls</h2>
-      <div className="row" id="rolls">
+      <div className="row justify-content-center" id="rolls">
       {rollsArray.map((item, index) => (
-        <div key={index} className="col-md-6 col-lg-6 mb-4">
+        <div key={index} className="col-md-4 mb-4">
          <div className="card p-3">
            <img
              src={item.image}
@@ -106,14 +106,14 @@ export default function Menu() {
       ))}
       </div>
       <h2>Nigiri (ala carte)</h2>
-      <div className="row" id="nigiri">
+      <div className="row justify-content-center" id="nigiri">
       {nigiriArray.map((item, index) => (
-        <div key={index} className="col-md-6 col-lg-6 mb-4">
+        <div key={index} className="col-md-4 mb-4">
          <div className="card p-3">
            <img
              src={item.image}
              className="card-img-top menu-img"
-             alt="Enjoy a lovely sushi roll"
+             alt="Enjoy some nigiri why not treat yourself"
            />
            <div className="card-body">
              <h3 className="card-title">{item.title}</h3>
