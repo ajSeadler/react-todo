@@ -36,7 +36,9 @@ const menuArray = [
   [
     {"item": "1", "title": "Nama Sake Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/8/item-900000000206392258_1694384758.png?size=medium", "price": "1.99/piece", "description": "Fresh Salmon"},
     {"item": "2", "title": "Maguro Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/9/item-900000000209639369_1694483013.png?size=medium", "price": "1.99/piece", "description": "Fresh Tuna"},
-    {"item": "3", "title": "Hamachi Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000209715163_1694640582.png?size=medium", "description": "Fresh yellowtail", "price": "1.99/piece"}
+    {"item": "3", "title": "Hamachi Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000209715163_1694640582.png?size=medium", "description": "Fresh yellowtail", "price": "1.99/piece"},
+    {"item": "4", "title": "Saba Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/9/item-900000000209715169_1694640547.png?size=medium", "price": "2.99/piece", "description": "Fresh, and also holy, mackarel"},
+    {"item": "5", "title": "Ebi Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/1/item-900000000209715171_1694400328.jpg?size=medium", "price": "1.99/piece", "description": "Fresh Shrimp"}
   ]
 ]
 

@@ -42,32 +42,31 @@ export default function Menu() {
   </div>
 ))}
         </div>
-      <h2>Appetizers</h2>
-      <div className="row justify-content-center" id="apps">
-      {appsArray.map((item, index) => (
-        <div key={index} className="col-md-3 mb-4">
-         <div className="card p-3 d-flex flex-column justify-content-between">
-           <img
-             src={item.image}
-             className="card-img-top menu-img"
-             alt="You deserve an appetizer"
-           />
-           <div className="card-body">
-             <h3 className="card-title">{item.title}</h3>
-             <p className="card-text">
-               {item.description}
-             </p>
-             <p className="card-text mt-auto">Price: ${item.price}</p>
-           </div>
-         </div>
-       </div>
-      ))}
+        <h2>Appetizers</h2>
+<div className="row justify-content-center" id="apps">
+  {appsArray.map((item, index) => (
+    <div key={index} className="col-md-3 mb-4">
+      <div className="card p-3 d-flex flex-column justify-content-between">
+        <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="You deserve an appetizer"
+        />
+        <div className="card-body">
+          <h3 className="card-title">{item.title}</h3>
+          <p className="card-text">{item.description}</p>
+        </div>
+        <p className="card-text mt-auto">Price: ${item.price}</p>
       </div>
+    </div>
+  ))}
+</div>
+
       <h2>Soup/Salad</h2>
       <div className="row justify-content-center" id="soupSalad">
       {soupSaladArray.map((item, index) => (
         <div key={index} className="col-md-3 mb-4">
-         <div className="card p-3">
+         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -78,8 +77,8 @@ export default function Menu() {
              <p className="card-text">
                {item.description}
              </p>
-             <p className="card-text">Price: ${item.price}</p>
-           </div>
+             </div>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
          </div>
        </div>
       ))}
@@ -88,7 +87,7 @@ export default function Menu() {
       <div className="row justify-content-center" id="rolls">
       {rollsArray.map((item, index) => (
         <div key={index} className="col-md-4 mb-4">
-         <div className="card p-3">
+         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -99,17 +98,17 @@ export default function Menu() {
              <p className="card-text">
                {item.description}
              </p>
-             <p className="card-text">Price: ${item.price}</p>
+             </div>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
          </div>
-       </div>
       ))}
       </div>
       <h2>Nigiri (ala carte)</h2>
       <div className="row justify-content-center" id="nigiri">
       {nigiriArray.map((item, index) => (
-        <div key={index} className="col-md-4 mb-4">
-         <div className="card p-3">
+      <div key={index} className="col-md-3 mb-4">
+        <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -120,10 +119,10 @@ export default function Menu() {
              <p className="card-text">
                {item.description}
              </p>
-             <p className="card-text">Price: ${item.price}</p>
+             </div>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
          </div>
-       </div>
       ))}
       </div>
       </div>
