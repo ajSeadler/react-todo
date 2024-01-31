@@ -11,6 +11,11 @@
   font-size: 24px;
 }
 
+.menu-header {
+  text-align: center;
+  margin-top: 50px; /* Adjust as needed */
+}
+
 #comp-img{
   width: 250px;
 }

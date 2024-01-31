@@ -17,15 +17,18 @@ const menuArray = [
     {"item": "5", "title": "Chicken Yakatori", "price": "12.99", "image": "https://www.thespruceeats.com/thmb/3EoSHGG8wO_FuPgnEj8xZoehbA4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chickenyakitori-589ddda65f9b58819c878628.jpeg", "description": "Grilled chicken skewers made from bite sized pieces of meat from all different parts of the chicken, such as the breasts, thighs, skin, liver and other innards.  Isn't that an appetizing word, innards?"},
     {"item": "6", "title": "Antipasto Platter", "price": "12.99", "image": "https://www.carolynscooking.com/wp-content/uploads/2022/01/Antipasto-Platter-2-500x500.jpg", "description": "Cheese, peppers, olives, various sliced deli meats and such.  Gabagool, that's a fun one.  Don't let it touch regular pasto or we all die."}
   ],
+  [{"item": "1", "title": "Miso Soup", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/6/item-900000000183077706_1694640949.png?size=medium", "price": "2.99", "description": "It's just Japanese for water, which proves we're kind of just messing with you here.  Soy bean broth with soft tofu, seaweed, and scallions"},
+  {"item": "2", }
+],
   [
     {"item": "1", "title": "California Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/6/item-900000000167871256_1694640112.png?size=medium", "price": "3.99", "description": "Six pieces. Imitation crab, avocado, cucumber, and sesame seeds.  Also includes free plane ticket to California."},
-    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"},
-    
+    {"item": "2", "title": "Negi Hamachi Roll", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/3/item-900000000184061293_1694484031.png?size=medium", "description": "Six pieces. Fresh yellowtail, scallion, and sesame seeds.  Also a secret ingredient that you are legally prohibted from asking about.", "price": "4.99"}
   ],
 ]
 
 const drinksArray = menuArray[0];
 const appsArray = menuArray[1];
-const rollsArray = menuArray[2];
+const soupSaladArray = menuArray[2];
+const rollsArray = menuArray[3];
 
-export { menuArray, drinksArray, appsArray, rollsArray };
+export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray };
