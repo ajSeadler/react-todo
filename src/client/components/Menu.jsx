@@ -23,7 +23,7 @@ export default function Menu() {
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
         <h2>Drinks</h2>
-        <div className="row justify-content-center" id="drinks">
+        <div className="row justify-content" id="drinks">
           {/* Mapping over the drinks array */}
           {drinksArray.map((item, index) => (
   <div key={index} className="col-md-3 mb-4">
@@ -43,7 +43,7 @@ export default function Menu() {
 ))}
         </div>
         <h2>Appetizers</h2>
-<div className="row justify-content-center" id="apps">
+<div className="row justify-content-end" id="apps">
   {appsArray.map((item, index) => (
     <div key={index} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
@@ -63,7 +63,7 @@ export default function Menu() {
 </div>
 
       <h2>Soup/Salad</h2>
-      <div className="row justify-content-center" id="soupSalad">
+      <div className="row justify-content-start" id="soupSalad">
       {soupSaladArray.map((item, index) => (
         <div key={index} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
@@ -105,7 +105,7 @@ export default function Menu() {
       ))}
       </div>
       <h2>Nigiri (ala carte)</h2>
-      <div className="row justify-content-center" id="nigiri">
+      <div className="row justify-content-end" id="nigiri">
       {nigiriArray.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
