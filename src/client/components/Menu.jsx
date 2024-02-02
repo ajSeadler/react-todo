@@ -41,13 +41,13 @@ const filteredPizza = filterMenuItems(pizzaArray);
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" style={{ alignItems: "center", margin: "0 auto" }}>
-            <Nav.Link href="#drinks">Drinks</Nav.Link>
-            <Nav.Link href="#apps">Appetizers</Nav.Link>
-            <Nav.Link href="#soupSalad">Soup/Salad</Nav.Link>
-            <Nav.Link href="#rolls">Sushi Rolls</Nav.Link>
-            <Nav.Link href="#nigiri">Nigiri (Ala Carte)</Nav.Link>
-            <Nav.Link href="#calzones">Calzones</Nav.Link>
-            <Nav.Link href="#pizza">Pizza</Nav.Link>
+            <Nav.Link href="#drinks" className="menu-nav-link">Drinks</Nav.Link>
+            <Nav.Link href="#apps" className="menu-nav-link">Appetizers</Nav.Link>
+            <Nav.Link href="#soupSalad" className="menu-nav-link">Soup/Salad</Nav.Link>
+            <Nav.Link href="#rolls" className="menu-nav-link">Sushi Rolls</Nav.Link>
+            <Nav.Link href="#nigiri" className="menu-nav-link">Nigiri (Ala Carte)</Nav.Link>
+            <Nav.Link href="#calzones" className="menu-nav-link">Calzones</Nav.Link>
+            <Nav.Link href="#pizza" className="menu-nav-link">Pizza</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -156,7 +156,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
       ))}
       </div>
       <h2>Calzones</h2>
-      <div className="row justify-content-start" id="calzones">
+      <div className="row justify-content-center" id="calzones">
       {filteredCalzones.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
@@ -177,7 +177,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
       ))}
       </div>
       <h2>Calzones</h2>
-      <div className="row justify-content-start" id="pizza">
+      <div className="row justify-content-end" id="pizza">
       {filteredPizza.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">

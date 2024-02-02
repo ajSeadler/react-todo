@@ -16,11 +16,19 @@
   margin-top: 50px; /* Adjust as needed */
 }
 
-.nav-link {
+.menu-nav-link {
   border: 1px solid black;
   margin: 5px;
   padding: 10px;
   border-radius: 20px;
+  width: 150px;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-nav-link:hover {
+  background-color: grey;
+  color: whitesmoke;
 }
 
 .nav-link:hover {

@@ -51,10 +51,15 @@ const menuArray = [
   {"item": "2", "title": "Sausage Calzone", "price": "7.99", "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qenvybsr/976d0340-5c5e-40f7-9331-76bc1da3735c.jpeg", "description": "A calzone is like if pizza was a sandwich, which seems unnecessary but people asked for it so we serve it now.  This one has sausage inside"},
   {"item": "3", "title": "Veggie Calzone", "price": "7.99", "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qenvybsr/976d0340-5c5e-40f7-9331-76bc1da3735c.jpeg", "description": "A calzone is like if pizza was a sandwich, which seems unnecessary but people asked for it so we serve it now.  This one has mushrooms, onions, broccoli and peppers inside"},
 ],
-[{"item": "1", "title": "Cheese Pizza", "description": "Topped with mozzarella, house made tomato sauce, maybe some basil.  All of our dough is made by the same old Italian woman mentioned above.  We still do not pay her and we don't know why she keeps coming back but we're both appreciative and concerned.",
+[{"item": "1", "title": "Cheese Pizza", "description": "Simple, yet simply delicious. Real cheese made from mozzarella on top of our signature pizza sauce with your choice of crust, then baked to a golden brown. It has just what you want, and nothing you don't.  All of our dough is made by the same old Italian woman mentioned above.  We still do not pay her and we don't know why she keeps coming back but we're both appreciative and concerned.",
 "price": ["12 Inch - 15.99", "14 inch - 17.99", "16 inch - 19.99"],
 "image": "https://www.papajohns.com/static-assets/a/images/web/product/pizzas/pan-1top-cheese-compressed.jpg"
-},]
+},
+{"item": "2", "title": "Pepperoni Pizza", "description": "Our hous made buttery crust crust covered with our signature pizza sauce, real cheese made from mozzarella, and pepperoni. With a pepperoni in almost every bite, it's one of our most popular pizzas.  Also, you don't have to feel bad about eating meat because we ensure every pig we slaughter is racist.",
+"price": ["12 Inch - 17.99", "14 inch - 19.99", "16 inch - 21.99"],
+"image": "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/b949d698-39d5-4056-b3b7-fbea4d09ee70.png"
+}
+]
 ]
 
 const drinksArray = menuArray[0];
