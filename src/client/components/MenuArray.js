@@ -58,6 +58,10 @@ const menuArray = [
 {"item": "2", "title": "Pepperoni Pizza", "description": "Our hous made buttery crust crust covered with our signature pizza sauce, real cheese made from mozzarella, and pepperoni. With a pepperoni in almost every bite, it's one of our most popular pizzas.  Also, you don't have to feel bad about eating meat because we ensure every pig we slaughter is racist.",
 "price": ["12 Inch - 17.99", "14 inch - 19.99", "16 inch - 21.99"],
 "image": "https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/b949d698-39d5-4056-b3b7-fbea4d09ee70.png"
+},
+{"item": "3", "title": "Sausage Pizza", "description": "Our tangy house-made pizza sauce is layered with sausage and real cheese made from mozzarella for a taste you'll crave.  As featured in the popular Big Sausage Pizza Cinematic Universe ",
+"price": ["12 Inch - 17.99", "14 inch - 19.99", "16 inch - 21.99"],
+"image": "https://www.papajohns.com/static-assets/a/images/web/product/garlic-parm-crust/garlic-parm-sausage-compressed.jpg"
 }
 ]
 ]
