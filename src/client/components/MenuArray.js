@@ -6,7 +6,7 @@ const menuArray = [
     {"item": "2", "title": "Peroni", "image": "https://132257054.cdn6.editmysite.com/uploads/1/3/2/2/132257054/s141702492982091317_p65_i2_w1223.jpeg", "price": "4.99", "description": "A pale golden, crisp and refreshing beer, with a delicate balance of bitterness, citrus and aromatic notes and a fast, clean finish"},
     {"item": "3", "title": "House Sake", "image": "https://www.realsimple.com/thmb/1zW2bEiO2AHUtEfGmEvpL2X2_0g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-sake-2000-b6b5005ff0f249ee889df759a1d5d123.jpg", "price": "19.99 per bottle", "description": "Our house Sake is an alcoholic beverage made from rice through fermentation and filtration. For fermentation of sake, rice koji, a kind of fungi grown on rice, is used. Sake has been made for over 1,000 years all over the Japanese islands."},
     {"item": "4", "title": "House Red", "image": "https://www.thespruceeats.com/thmb/N9TEoqtQz-R9zkjMXM8I530sj30=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/red-wine-is-poured-into-a-glass-from-a-bottle--light-background--1153158143-98320451802c485cb6d7b5437c7fd60a.jpg", "price": "19.99 per bottle", "description": "Our house red combine a fruity oak flavor with a daring, almost romantic, tinger of aged elder berries personally stomped on by Italian Monks who have never met a woman and absolutely do not plan to." },
-    {"iten": "4", "title": "Suntory Whiskey", "image": "https://house.suntory.com/sites/default/files/styles/original/public/2022-10/03_cocktail-serves_gallery.jpg.webp?itok=4qDbjgRE", "price": "11.99", "description": "For relaxing times, make it Suntory times.  Two fingers, served on the rocks."},
+    {"item": "4", "title": "Suntory Whiskey", "image": "https://house.suntory.com/sites/default/files/styles/original/public/2022-10/03_cocktail-serves_gallery.jpg.webp?itok=4qDbjgRE", "price": "11.99", "description": "For relaxing times, make it Suntory times.  Two fingers, served on the rocks."},
     {"item": "5", "title": "Assorted Fountain Drinks", "image": "https://southpark.garlicknotpizza.com/wp-content/uploads/sites/15/2020/08/grid-fountain-drinks2.png", "price": "4.99", "description": "We serve Coca Cola products here.  We do not respect Pepsi and we never will.  It's a degenerate soda line.  If you ask for Pepsi we will ask you politely, but firmly, to leave and to never come back."},
     {"item": "6", "title": "espresso", "image": "https://www.tasteofhome.com/wp-content/uploads/2023/03/TOH-espresso-GettyImages-1291298315-JVcrop.jpg", "price": "3.99", "description": "Our robust and bold espresso is made from beans harvested, individually, by the hands of small sicialian children who were paid in rice.  Also, we don't serve tea so stop asking.  We will NEVER serve tea."}
   ],
@@ -46,7 +46,15 @@ const menuArray = [
     {"item": "5", "title": "Ebi Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/1/item-900000000209715171_1694400328.jpg?size=medium", "price": "1.99/piece", "description": "Fresh Shrimp"},
     {"item": "6", "title": "Masago Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/1/item-900000000209715161_1694382509.jpg?size=medium", "price": "1.99/piece", "description": "Fresh Smelt Roe.  Don't look up what that is, it's gross"},
     {"item": "7", "title": "Kani Sushi", "image": "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-164410000000000000/menu/items/7/item-900000000209715177_1694640513.png?size=medium", "price": ".99/piece", "description": "Imitation crab meat.  Very affordable"}
-  ]
+  ],
+  [{"item": "1", "title": "Pepperoni Calzone", "price": "7.99", "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qenvybsr/976d0340-5c5e-40f7-9331-76bc1da3735c.jpeg", "description": "A calzone is like if pizza was a sandwich, which seems unnecessary but people asked for it so we serve it now.  This one has pepperoni inside"},
+  {"item": "2", "title": "Sausage Calzone", "price": "7.99", "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qenvybsr/976d0340-5c5e-40f7-9331-76bc1da3735c.jpeg", "description": "A calzone is like if pizza was a sandwich, which seems unnecessary but people asked for it so we serve it now.  This one has sausage inside"},
+  {"item": "3", "title": "Veggie Calzone", "price": "7.99", "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qenvybsr/976d0340-5c5e-40f7-9331-76bc1da3735c.jpeg", "description": "A calzone is like if pizza was a sandwich, which seems unnecessary but people asked for it so we serve it now.  This one has mushrooms, onions, broccoli and peppers inside"},
+],
+[{"item": "1", "title": "Cheese Pizza", "description": "Topped with mozzarella, house made tomato sauce, maybe some basil.  All of our dough is made by the same old Italian woman mentioned above.  We still do not pay her and we don't know why she keeps coming back but we're both appreciative and concerned.",
+"price": ["12 Inch - 15.99", "14 inch - 17.99", "16 inch - 19.99"],
+"image": "https://www.papajohns.com/static-assets/a/images/web/product/pizzas/pan-1top-cheese-compressed.jpg"
+},]
 ]
 
 const drinksArray = menuArray[0];
@@ -54,5 +62,7 @@ const appsArray = menuArray[1];
 const soupSaladArray = menuArray[2];
 const rollsArray = menuArray[3];
 const nigiriArray = menuArray[4];
+const calzoneArray = menuArray[5];
+const pizzaArray = menuArray[6]
 
-export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray };
+export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray };

@@ -1,7 +1,7 @@
 // we'll have to input various bootstrap components as we build this out, but this is just a placeholder.
 // I'm thinking, in our data file, we could have sections for like drinks, apps, etc.  Then we just fetch and map out each section into individual cards and such
 
-import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray } from "./MenuArray";
+import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +21,8 @@ const filteredApps = filterMenuItems(appsArray);
 const filteredSoupSalad = filterMenuItems(soupSaladArray);
 const filteredRolls = filterMenuItems(rollsArray);
 const filteredNigiri = filterMenuItems(nigiriArray);
+const filteredCalzones = filterMenuItems(calzoneArray);
+const filteredPizza = filterMenuItems(pizzaArray);
 
   return (
     <>
@@ -44,6 +46,8 @@ const filteredNigiri = filterMenuItems(nigiriArray);
             <Nav.Link href="#soupSalad">Soup/Salad</Nav.Link>
             <Nav.Link href="#rolls">Sushi Rolls</Nav.Link>
             <Nav.Link href="#nigiri">Nigiri (Ala Carte)</Nav.Link>
+            <Nav.Link href="#calzones">Calzones</Nav.Link>
+            <Nav.Link href="#pizza">Pizza</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -147,6 +151,52 @@ const filteredNigiri = filterMenuItems(nigiriArray);
              </p>
              </div>
              <p className="card-text mt-auto">Price: ${item.price}</p>
+           </div>
+         </div>
+      ))}
+      </div>
+      <h2>Calzones</h2>
+      <div className="row justify-content-start" id="calzones">
+      {filteredCalzones.map((item, index) => (
+      <div key={index} className="col-md-3 mb-4">
+        <div className="card p-3 d-flex flex-column justify-content-between">
+           <img
+             src={item.image}
+             className="card-img-top menu-img"
+             alt="It's like a sandwich but for italians and also they already have sandwiches and they're better than calzones."
+           />
+           <div className="card-body">
+             <h3 className="card-title">{item.title}</h3>
+             <p className="card-text">
+               {item.description}
+             </p>
+             </div>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
+           </div>
+         </div>
+      ))}
+      </div>
+      <h2>Calzones</h2>
+      <div className="row justify-content-start" id="pizza">
+      {filteredPizza.map((item, index) => (
+      <div key={index} className="col-md-3 mb-4">
+        <div className="card p-3 d-flex flex-column justify-content-between">
+           <img
+             src={item.image}
+             className="card-img-top menu-img"
+             alt="Yeah, I'm into fitness.  Fitness whole pizza in my mouth."
+           />
+           <div className="card-body">
+             <h3 className="card-title">{item.title}</h3>
+             <p className="card-text">
+               {item.description}
+             </p>
+             </div>
+             <p className="card-text mt-auto">Price:   <select>
+              {item.price.map((price, priceIndex) => (
+                <option key={priceIndex}>{price}</option>
+              ))}
+            </select></p>
            </div>
          </div>
       ))}
