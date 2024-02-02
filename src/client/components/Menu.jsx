@@ -2,13 +2,39 @@
 // I'm thinking, in our data file, we could have sections for like drinks, apps, etc.  Then we just fetch and map out each section into individual cards and such
 
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray } from "./MenuArray";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filterMenuItems = (menuArray) =>
+  menuArray.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+const filteredDrinks = filterMenuItems(drinksArray);
+const filteredApps = filterMenuItems(appsArray);
+const filteredSoupSalad = filterMenuItems(soupSaladArray);
+const filteredRolls = filterMenuItems(rollsArray);
+const filteredNigiri = filterMenuItems(nigiriArray);
+
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
+    <Form inline>
+          <FormControl
+            type="text"
+            placeholder="Search"
+            className="mr-sm-2"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{width: "30%", margin: "0 auto", marginTop: "5px"}}
+          />
+        </Form>
     <Navbar expand="lg" style={{ width: "80%", margin: "0 auto" }}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +51,7 @@ export default function Menu() {
         <h2>Drinks</h2>
         <div className="row justify-content-start" id="drinks">
           {/* Mapping over the drinks array */}
-          {drinksArray.map((item, index) => (
+          {filteredDrinks.map((item, index) => (
   <div key={index} className="col-md-3 mb-4">
     <div className="card p-3 d-flex flex-column justify-content-between">
       <img
@@ -44,7 +70,7 @@ export default function Menu() {
         </div>
         <h2>Appetizers</h2>
 <div className="row justify-content-end" id="apps">
-  {appsArray.map((item, index) => (
+  {filteredApps.map((item, index) => (
     <div key={index} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
         <img
@@ -64,7 +90,7 @@ export default function Menu() {
 
       <h2>Soup/Salad</h2>
       <div className="row justify-content-start" id="soupSalad">
-      {soupSaladArray.map((item, index) => (
+      {filteredSoupSalad.map((item, index) => (
         <div key={index} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -85,7 +111,7 @@ export default function Menu() {
       </div>
       <h2>Sushi Rolls</h2>
       <div className="row justify-content-end" id="rolls">
-      {rollsArray.map((item, index) => (
+      {filteredRolls.map((item, index) => (
         <div key={index} className="col-md-4 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -106,7 +132,7 @@ export default function Menu() {
       </div>
       <h2>Nigiri (ala carte)</h2>
       <div className="row justify-content-start" id="nigiri">
-      {nigiriArray.map((item, index) => (
+      {filteredNigiri.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
