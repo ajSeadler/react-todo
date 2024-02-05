@@ -67,7 +67,18 @@ const filteredPizza = filterMenuItems(pizzaArray);
         <h3 className="card-title menu-title">{item.title}</h3>
         <p className="card-text">{item.description}</p>
       </div>
-      <p className="card-text mt-auto">Price: ${item.price}</p>
+      <div className="card-text mt-auto">
+        {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
+                {Array.isArray(item.price) ? (
+                  <select>
+                    {item.price.map((price, priceIndex) => (
+                      <option key={priceIndex}>{price}</option>
+                    ))}
+                  </select>
+                ) : (
+                  `Price: $${item.price}`
+                )}
+              </div>
     </div>
   </div>
 ))}
