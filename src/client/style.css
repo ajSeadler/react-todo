@@ -24,7 +24,11 @@ body {
   -webkit-text-stroke: 1px black; 
 }
 
-.menu p {
+.Menu p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Home p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
