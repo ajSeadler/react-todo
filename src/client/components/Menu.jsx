@@ -27,7 +27,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
-    <Form inline>
+    <Form inline style={{marginTop: "20px"}}>
           <FormControl
             type="text"
             placeholder="Search"

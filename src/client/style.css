@@ -8,16 +8,24 @@
 
 body {
   background-color: #01084f;
-  font: "Onick";
-  color: whitesmoke
+  font-family: "Onick";
+  color: whitesmoke;
 }
 
+/* importing the onick font */
 @font-face {
-  font-family: "Onick";   /*Can be any text*/
+  font-family: "Onick";   
   src: local("onick.regular"),
     url("./components/onick.regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Ferro";   
+  src: local("ferro-rosso-regular"),
+    url("./components/ferro-rosso.regular.ttf") format("truetype");
+}
+
+/* creating a neon effect via a series of text shadows */
 .neonText {
   color: #fff;
   text-shadow:
@@ -32,6 +40,7 @@ body {
     animation: flicker 1.5s infinite alternate;
 }
 
+/* using keyframes to add a flicker effect */
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     text-shadow:
@@ -67,6 +76,12 @@ body {
   width: 150px;
   align-items: center;
   text-align: center;
+  -webkit-text-stroke: 1px black; 
+  color: whitesmoke;
+}
+
+Nav.Link {
+color: antiquewhite;
 }
 
 .menu-nav-link:hover {

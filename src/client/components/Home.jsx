@@ -2,6 +2,7 @@
 
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap - npm install bootstrap@latest if you're having probs
+import { motion } from "framer-motion";
 
 function Home() {
   return (
@@ -13,7 +14,16 @@ function Home() {
         textStroke: '1px black'}}>
           Collin and Tony's House of Sushi and Pizza
         </h1>
-        <p className="lead" style={{fontFamily: "Onick"}}>Delightful Fusion of Sushi and Pizza</p>
+        <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 2, delay: 0.2 }}
+  >
+        <p className="lead" style={{fontFamily: "Onick", WebkitTextStroke: '1px black',
+        MozTextStroke: '1px black',
+        OTextStroke: '1px black',
+        textStroke: '1px black' }}>The best combination of Japanese and Italian since World War 2</p>
+        </motion.div>
       </header>
       <main>
         <section className="specials row justify-content-around mb-5">
@@ -55,9 +65,12 @@ function Home() {
           </div>
         </section>
 
-        <section className="about-us mb-5">
+        <section className="about-us mb-5" style={{backgroundColor: "#ff00c1"}}>
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
-          <h2>About Us</h2>
+          <h2 className="justify-content-center" style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick", color: "whitesmoke", WebkitTextStroke: '1px black',
+        MozTextStroke: '1px black',
+        OTextStroke: '1px black',
+        textStroke: '1px black' }}>About Us</h2>
           <p>
             We at Collin and Tony's House of Sushi and Pizza take pride in
             offering a unique culinary experience with a fusion of Japanese and
@@ -69,30 +82,6 @@ function Home() {
             on your taste buds. Better ingredients, better pizza and sushi,
             better Collin and Tony.
           </p>
-        </section>
-        {/* =====================at somepoint we will make a menu component and link a route to it, but i just did this for now.================== */}
-        <section className="menu mb-5">
-          <h2>Our Menu</h2>
-          <div className="row">
-            <div className="col-md-6">
-              <h3>Sushi Selection</h3>
-              <ul>
-                <li>Sashimi Platter</li>
-                <li>Dragon Roll</li>
-                <li>Spicy Tuna Roll</li>
-                <li>Vegetarian Maki</li>
-              </ul>
-            </div>
-            <div className="col-md-6">
-              <h3>Pizza Varieties</h3>
-              <ul>
-                <li>Margherita Pizza</li>
-                <li>Pepperoni Delight</li>
-                <li>Vegetarian Supreme</li>
-                <li>Hawaiian Bliss</li>
-              </ul>
-            </div>
-          </div>
         </section>
 
         <section className="contact mb-5">
