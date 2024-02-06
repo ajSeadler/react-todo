@@ -6,6 +6,41 @@
   height: 100vh; 
 }
 
+/* Menu.css */
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+
 body {
   background-color: #01084f;
   font-family: "Onick";
@@ -30,6 +65,10 @@ body {
 
 .Home p {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-text {
+  font-family: 'Courier New', Courier, monospace
 }
 
 @font-face {

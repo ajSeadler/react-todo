@@ -13,7 +13,7 @@ export default function NavBar() {
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
         textStroke: '1px black', fontSize: "4em", marginRight: "200px", marginLeft: "50px"}} href="/">C T S P</Navbar.Brand>
-         <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginLeft: "20px", border: "2px 2px solid white"}} />
+         <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor: "#ff00c1", marginLeft: "20px", border: "2px 2px solid white", margin: "0 auto"}} />
           <Navbar.Collapse className="justify-content-center" id="basic-navbar-nav">
           <Nav className="me-auto">
             {/* Starting with these three basic pages, we can add more.  Maybe like a page for private parties or something?  An events calendar we can try and import from google calendars or something?  I dunno, just ideas! */}

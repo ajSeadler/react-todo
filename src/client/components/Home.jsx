@@ -81,7 +81,7 @@ function Home() {
         alt="Today's Sushi special"
       />
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
-        <p className="card-text" style={{fontFamily: "Arial, Helvetica, sans-serif"}}>{randomRoll.description}</p>
+        <p className="card-text" >{randomRoll.description}</p>
       <div className="card-text mt-auto">
         {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
                 {Array.isArray(randomRoll.price) ? (
@@ -104,7 +104,7 @@ function Home() {
         alt="Today's Pizza special"
       />
         <h3 className="card-title menu-title">{randomPizza.title}</h3>
-        <p className="card-text" style={{fontFamily: "Arial, Helvetica, sans-serif"}}>{randomPizza.description}</p>
+        <p className="card-text">{randomPizza.description}</p>
       <div className="card-text mt-auto">
         {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
                 {Array.isArray(randomPizza.price) ? (
@@ -127,12 +127,12 @@ function Home() {
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
         textStroke: '1px black' }}>About Us</h2>
-          <p style={{fontFamily: "Arial"}}>
+          <p className="card-text">
             We at Collin and Tony's House of Sushi and Pizza take pride in
             offering a unique culinary experience with a fusion of Japanese and
             Italian flavors.
           </p>
-          <p style={{fontFamily: "Arial"}}>
+          <p className="card-text">
             Our dedicated chefs use only the finest ingredients to create
             mouthwatering sushi and pizza that will leave a lasting impression
             on your taste buds. Better ingredients, better pizza and sushi,
