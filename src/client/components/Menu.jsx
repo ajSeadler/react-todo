@@ -45,14 +45,14 @@ const filteredPizza = filterMenuItems(pizzaArray);
             <Nav.Link href="#apps" className="menu-nav-link">Appetizers</Nav.Link>
             <Nav.Link href="#soupSalad" className="menu-nav-link">Soup/Salad</Nav.Link>
             <Nav.Link href="#rolls" className="menu-nav-link">Sushi Rolls</Nav.Link>
-            <Nav.Link href="#nigiri" className="menu-nav-link">Nigiri (Ala Carte)</Nav.Link>
+            <Nav.Link href="#nigiri" className="menu-nav-link">Nigiri</Nav.Link>
             <Nav.Link href="#calzones" className="menu-nav-link">Calzones</Nav.Link>
             <Nav.Link href="#pizza" className="menu-nav-link">Pizza</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
-        <h2>Drinks</h2>
+        <h2 className="h2-menu">Drinks</h2>
         <div className="row justify-content-start" id="drinks">
           {/* Mapping over the drinks array */}
           {filteredDrinks.map((item, index) => (
@@ -83,7 +83,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
   </div>
 ))}
         </div>
-        <h2>Appetizers</h2>
+        <h2 className="h2-menu">Appetizers</h2>
 <div className="row justify-content-end" id="apps">
   {filteredApps.map((item, index) => (
     <div key={index} className="col-md-3 mb-4">
@@ -103,7 +103,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
   ))}
 </div>
 
-      <h2>Soup/Salad</h2>
+      <h2 className="h2-menu">Soup/Salad</h2>
       <div className="row justify-content-start" id="soupSalad">
       {filteredSoupSalad.map((item, index) => (
         <div key={index} className="col-md-3 mb-4">
@@ -124,7 +124,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
        </div>
       ))}
       </div>
-      <h2>Sushi Rolls</h2>
+      <h2 className="h2-menu">Sushi Rolls</h2>
       <div className="row justify-content-end" id="rolls">
       {filteredRolls.map((item, index) => (
         <div key={index} className="col-md-4 mb-4">
@@ -145,7 +145,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
          </div>
       ))}
       </div>
-      <h2>Nigiri (ala carte)</h2>
+      <h2 className="h2-menu">Nigiri (ala carte)</h2>
       <div className="row justify-content-start" id="nigiri">
       {filteredNigiri.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
@@ -166,7 +166,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
          </div>
       ))}
       </div>
-      <h2>Calzones</h2>
+      <h2 className="h2-menu">Calzones</h2>
       <div className="row justify-content-center" id="calzones">
       {filteredCalzones.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
@@ -187,7 +187,7 @@ const filteredPizza = filterMenuItems(pizzaArray);
          </div>
       ))}
       </div>
-      <h2>Calzones</h2>
+      <h2 className="h2-menu">Pizza</h2>
       <div className="row justify-content-end" id="pizza">
       {filteredPizza.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
