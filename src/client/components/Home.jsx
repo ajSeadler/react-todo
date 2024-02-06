@@ -7,10 +7,13 @@ function Home() {
   return (
     <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100">
       <header className="text-center mb-5">
-        <h1 className="display-4 neonText" style={{fontFamily: "Onick", marginTop: "10px"}}>
+        <h1 className="display-4 neonText" style={{fontFamily: "Onick", marginTop: "20px",  WebkitTextStroke: '1px black',
+        MozTextStroke: '1px black',
+        OTextStroke: '1px black',
+        textStroke: '1px black'}}>
           Collin and Tony's House of Sushi and Pizza
         </h1>
-        <p className="lead">Delightful Fusion of Sushi and Pizza</p>
+        <p className="lead" style={{fontFamily: "Onick"}}>Delightful Fusion of Sushi and Pizza</p>
       </header>
       <main>
         <section className="specials row justify-content-around mb-5">
