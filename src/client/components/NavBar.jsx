@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <>
     {/* Chose basic dark tempelate.  Once we settle on a color scheme and all that jazz we can greatly modify the basic a$$ bootstrap stuff */}
-      <Navbar bg="dark" data-bs-theme="dark" style={{width: "100%"}}>
+      <Navbar bg="dark" data-bs-theme="dark" style={{width: "100%", fontFamily: "Onick"}}>
         <Container>
           <Navbar.Brand href="/">C T S P</Navbar.Brand>
           <Nav className="me-auto">

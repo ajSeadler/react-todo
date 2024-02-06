@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100">
       <header className="text-center mb-5">
-        <h1 className="display-4">
+        <h1 className="display-4 neonText" style={{fontFamily: "Onick", marginTop: "10px"}}>
           Collin and Tony's House of Sushi and Pizza
         </h1>
         <p className="lead">Delightful Fusion of Sushi and Pizza</p>
@@ -15,7 +15,7 @@ function Home() {
       <main>
         <section className="specials row justify-content-around mb-5">
           {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
-          <h1>Today's Specials</h1>
+          <h1 style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick"}}>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
             <div className="card p-3">
               <img
