@@ -1,28 +1,52 @@
 // we'll have to input various bootstrap components as we build this out, but this is just a placeholder.
 // I'm thinking, in our data file, we could have sections for like drinks, apps, etc.  Then we just fetch and map out each section into individual cards and such
 
+import { FaArrowUp } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
-import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showScroll, setShowScroll] = useState(false);
+
+  // useEffect to monitor scroll position and determine whether or not to show the arrow button
+  useEffect(() => {
+    const handleScroll = () => {
+      // scrolling past 300px will trigger arrow up icon
+      if (window.pageYOffset > 300) {
+        setShowScroll(true);
+      } else {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+
+    // remove the event listener when the component unmounts (so it doesnt run forever)
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const filterMenuItems = (menuArray) =>
-  menuArray.filter(
-    (item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+    menuArray.filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
 
-const filteredDrinks = filterMenuItems(drinksArray);
-const filteredApps = filterMenuItems(appsArray);
-const filteredSoupSalad = filterMenuItems(soupSaladArray);
-const filteredRolls = filterMenuItems(rollsArray);
-const filteredNigiri = filterMenuItems(nigiriArray);
-const filteredCalzones = filterMenuItems(calzoneArray);
-const filteredPizza = filterMenuItems(pizzaArray);
+  const filteredDrinks = filterMenuItems(drinksArray);
+  const filteredApps = filterMenuItems(appsArray);
+  const filteredSoupSalad = filterMenuItems(soupSaladArray);
+  const filteredRolls = filterMenuItems(rollsArray);
+  const filteredNigiri = filterMenuItems(nigiriArray);
+  const filteredCalzones = filterMenuItems(calzoneArray);
+  const filteredPizza = filterMenuItems(pizzaArray);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -225,6 +249,11 @@ const filteredPizza = filterMenuItems(pizzaArray);
       ))}
       </div>
       </div>
+      {showScroll && (
+        <div className="scroll-to-top" onClick={scrollToTop} style={{ position: "fixed", bottom: "20px", right: "20px", cursor: "pointer", backgroundColor: "yellow", padding: "20px", borderRadius: "50%" }}>
+        <FaArrowUp style={{ color: "black", fontSize:'1.5rem' }} />
+      </div>
+      )}
     </>
   )
 }
