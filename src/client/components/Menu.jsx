@@ -94,21 +94,18 @@ export default function Menu() {
           onChange={handleSearchChange}
           style={{ width: "30%", margin: "0 auto", marginTop: "5px" }}
         />
-        {/* Dropdown for displaying filtered items */}
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Filtered Items
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {/* Mapping over filteredItems to display in the dropdown */}
-            {filteredItems.map((item, index) => (
-              <Dropdown.Item key={index} onSelect={() => handleDropdownSelect(item.title)}>
-                {item.title}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
       </Form>
+      {/* Render filtered items only when there's a search term */}
+      {searchTerm.trim() !== "" && (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {filteredItems.map((item, index) => (
+            <div key={index} style={{ margin: '5px 0' }}>
+              <span>{item.title}</span>
+              {/* You can add more details here if needed */}
+            </div>
+          ))}
+        </div>
+      )}
     <Navbar expand="lg" style={{ width: "80%", margin: "0 auto" }}>
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
