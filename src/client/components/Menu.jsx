@@ -9,7 +9,58 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  // Function to handle card click and toggle flipping
+  const handleCardClick = (index) => {
+    setFlippedIndex(index === flippedIndex ? null : index);
+  };
+
+  useEffect(() => {
+    // Function to filter menu items
+    const filterMenuItems = () => {
+      // Your filtering logic here based on searchTerm
+      // For example, you can filter drinksArray, appsArray, etc.
+      // and combine them into a single array
+      const filteredDrinks = drinksArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredApps = appsArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredSoupSalad = soupSaladArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredRolls = rollsArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredNigiri = nigiriArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredPizza = pizzaArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      // Combine all filtered arrays into one
+      const allFilteredItems = [...filteredDrinks, ...filteredApps, ...filteredSoupSalad, ...filteredRolls, ...filteredNigiri, ...filteredPizza];
+      return allFilteredItems;
+    };
+
+    // Update filteredItems state
+    setFilteredItems(filterMenuItems());
+  }, [searchTerm]);
+
+  // Function to handle search term change
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   // useEffect to monitor scroll position and determine whether or not to show the arrow button
   useEffect(() => {
@@ -36,14 +87,6 @@ export default function Menu() {
         (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
     );
 
-  const filteredDrinks = filterMenuItems(drinksArray);
-  const filteredApps = filterMenuItems(appsArray);
-  const filteredSoupSalad = filterMenuItems(soupSaladArray);
-  const filteredRolls = filterMenuItems(rollsArray);
-  const filteredNigiri = filterMenuItems(nigiriArray);
-  const filteredCalzones = filterMenuItems(calzoneArray);
-  const filteredPizza = filterMenuItems(pizzaArray);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -51,16 +94,33 @@ export default function Menu() {
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
-    <Form inline style={{marginTop: "20px"}}>
-          <FormControl
-            type="text"
-            placeholder="Search"
-            className="mr-sm-2"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            style={{width: "30%", margin: "0 auto", marginTop: "5px"}}
-          />
-        </Form>
+    <Form inline style={{ marginTop: "20px" }}>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className="mr-sm-2"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          style={{ width: "30%", margin: "0 auto", marginTop: "5px" }}
+        />
+      </Form>
+      {/* Render filtered items in a grid with four items across */}
+      {searchTerm.trim() !== "" && (
+        <div className="filtered-items-grid">
+          {filteredItems.map((item, index) => (
+            <div key={index} className="item">
+                <a key={index} href={`#${item.item}`} className="item">
+              <span><img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="Your search terms yielded this"
+        /></span>
+              <span>{item.title}</span>
+            </a>
+            </div>
+          ))}
+        </div>
+      )}
     <Navbar expand="lg" style={{ width: "80%", margin: "0 auto" }}>
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
@@ -79,44 +139,60 @@ export default function Menu() {
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
       <h2 className="h2-menu">Drinks</h2>
-<div className="row justify-content-end" id="apps">
-  {filteredDrinks.map((item, index) => (
-    <div key={index} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between">
-        <img
-          src={item.image}
-          className="card-img-top menu-img"
-          alt="You deserve an appetizer"
-        />
-        <div className="card-body">
-          <h3 className="card-title">{item.title}</h3>
-          <p className="card-text">{item.description}</p>
-        </div>
-        <div className="card-text mt-auto">
-        {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
-                {Array.isArray(item.price) ? (
-                  <select>
-                    {item.price.map((price, priceIndex) => (
-                      <option key={priceIndex}>{price}</option>
-                    ))}
-                  </select>
-                ) : (
-                  `Price: $${item.price}`
-                )}
+      <div className="row justify-content-end" id="apps">
+        {drinksArray.map((item, index) => (
+          <div key={index} id={item.item} className="col-md-3 mb-4">
+            <div className={`flip-card ${flippedIndex === index ? 'flipped' : ''}`} onClick={() => handleCardClick(index)}>
+              <div className="flip-card-inner">
+                {/* back of the card */}
+                <div className="card p-3 d-flex flex-column justify-content-between flip-card-back">
+                  <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="enjoy a refreshing beverage"
+                  />
+                  <div className="card-body">
+                    <h3 className="card-title">{item.title}</h3>
+                    <p className="card-text">{item.description}</p>
+                  </div>
+                  <div className="card-text mt-auto">
+                    {/* Using conditional rendering for price */}
+                    {Array.isArray(item.price) ? (
+                      <select>
+                        {item.price.map((price, priceIndex) => (
+                          <option key={priceIndex}>{price}</option>
+                        ))}
+                      </select>
+                    ) : (
+                      `Price: $${item.price}`
+                    )}
+                  </div>
+                </div>
+                {/* front of the card */}
+                <div className="card p-3 d-flex flex-column justify-content-between flip-card-front">
+                  <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="You deserve an appetizer"
+                  />
+                  <div className="card-body">
+                    <h3 className="card-title">{item.title}</h3>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
         <h2 className="h2-menu">Appetizers</h2>
 <div className="row justify-content-end" id="apps">
-  {filteredApps.map((item, index) => (
-    <div key={index} className="col-md-3 mb-4">
+  {appsArray.map((item, index) => (
+    <div key={index} id={item.item} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
         <img
           src={item.image}
           className="card-img-top menu-img"
-          alt="You deserve an appetizer"
+          alt="You deserve an appetizer\"
         />
         <div className="card-body">
           <h3 className="card-title">{item.title}</h3>
@@ -141,8 +217,8 @@ export default function Menu() {
 
       <h2 className="h2-menu">Soup/Salad</h2>
       <div className="row justify-content-start" id="soupSalad">
-      {filteredSoupSalad.map((item, index) => (
-        <div key={index} className="col-md-3 mb-4">
+      {soupSaladArray.map((item, index) => (
+        <div key={index} id={item.item} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -162,8 +238,8 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Sushi Rolls</h2>
       <div className="row justify-content-end" id="rolls">
-      {filteredRolls.map((item, index) => (
-        <div key={index} className="col-md-4 mb-4">
+      {rollsArray.map((item, index) => (
+        <div key={index} id={item.item} className="col-md-4 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -183,8 +259,8 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Nigiri (ala carte)</h2>
       <div className="row justify-content-start" id="nigiri">
-      {filteredNigiri.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      {nigiriArray.map((item, index) => (
+      <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -204,8 +280,8 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Calzones</h2>
       <div className="row justify-content-center" id="calzones">
-      {filteredCalzones.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      {calzoneArray.map((item, index) => (
+      <div key={index} item={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -225,8 +301,8 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Pizza</h2>
       <div className="row justify-content-end" id="pizza">
-      {filteredPizza.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      {pizzaArray.map((item, index) => (
+      <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
