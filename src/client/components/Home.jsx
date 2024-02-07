@@ -2,6 +2,7 @@
 
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap - npm install bootstrap@latest if you're having probs
+import Contact from "./Contact";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
@@ -140,19 +141,7 @@ function Home() {
           </p>
         </section>
 
-        <section className="contact mb-5" style={{backgroundColor: "#ff00c1"}}>
-        <h2 className="justify-content-center" style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick", color: "whitesmoke", WebkitTextStroke: '1px black',
-        MozTextStroke: '1px black',
-        OTextStroke: '1px black',
-        textStroke: '1px black' }}>Contact Us</h2>
-          <p className="card-text justify-content-center text-center">
-            123 Baker Street, Kewlsville, NE, 40220
-            <br />
-            (555) 123-4567
-            <br />
-            contact@cntpns.com
-          </p>
-        </section>
+        <Contact />
       </main>
     </div>
   );

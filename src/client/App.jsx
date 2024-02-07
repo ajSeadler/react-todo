@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Menu from "./components/Menu";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path ="/contact" element={<Contact />} />
         
       </Routes>
+      <Footer />
       
     </>
   );
