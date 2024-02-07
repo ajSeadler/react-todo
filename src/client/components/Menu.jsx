@@ -188,7 +188,7 @@ export default function Menu() {
 <div className="row justify-content-end" id="apps">
   {appsArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between flip-card-front">
+      <div className="card p-3 d-flex flex-column justify-content-between">
         <img
           src={item.image}
           className="card-img-top menu-img"
