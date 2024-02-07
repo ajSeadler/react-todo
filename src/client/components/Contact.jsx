@@ -5,7 +5,10 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{ WebkitTextStroke: '1px black',
+    MozTextStroke: '1px black',
+    OTextStroke: '1px black',
+    textStroke: '1px black', marginBottom: "10px"  }}>
       <div className="row justify-content-center">
         <div className="col-md-6" style={{fontSize:'1.5rem'}}>
           <h1 className="text-center mb-4" style={{textDecoration:'underline'}}>Contact Us</h1>
@@ -31,7 +34,7 @@ export default function Contact() {
           </div>
 
           <div className="text-center">
-            <h2 className="lighter-text">Send us a Message</h2>
+            <h2 style={{color: "white"}}>Send us a Message</h2>
             <form>
               <div className="mb-3">
                 <input type="text" className="form-control" id="name" placeholder="Your Name" required />

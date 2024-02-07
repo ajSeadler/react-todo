@@ -3,7 +3,10 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram
 
 export default function Footer() {
   return (
-    <footer className="footer mt-auto py-4 bg-dark text-white">
+    <footer className="footer mt-auto py-4 bg-dark text-white" style={{ WebkitTextStroke: '1px black',
+    MozTextStroke: '1px black',
+    OTextStroke: '1px black',
+    textStroke: '1px black'}}>
       <div className="container">
         <div className="row">
           <div className="col-md-4">
