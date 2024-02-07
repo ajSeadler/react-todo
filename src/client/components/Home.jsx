@@ -145,7 +145,7 @@ function Home() {
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
         textStroke: '1px black' }}>Contact Us</h2>
-          <p style={{fontFamily: "Arial"}}>
+          <p className="card-text">
             Address: 123 Baker Street, Kewlsville, NE, 40220
             <br />
             Phone: (555) 123-4567
