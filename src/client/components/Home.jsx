@@ -145,12 +145,12 @@ function Home() {
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
         textStroke: '1px black' }}>Contact Us</h2>
-          <p className="card-text">
-            Address: 123 Baker Street, Kewlsville, NE, 40220
+          <p className="card-text justify-content-center text-center">
+            123 Baker Street, Kewlsville, NE, 40220
             <br />
-            Phone: (555) 123-4567
+            (555) 123-4567
             <br />
-            Email: contact@cntpns.com
+            contact@cntpns.com
           </p>
         </section>
       </main>
