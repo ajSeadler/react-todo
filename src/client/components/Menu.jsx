@@ -107,7 +107,7 @@ export default function Menu() {
               <span><img
           src={item.image}
           className="card-img-top menu-img"
-          alt="You deserve an appetizer"
+          alt="Your search terms yielded this"
         /></span>
               <span>{item.title}</span>
             </a>
@@ -165,7 +165,7 @@ export default function Menu() {
         <h2 className="h2-menu">Appetizers</h2>
 <div className="row justify-content-end" id="apps">
   {appsArray.map((item, index) => (
-    <div key={index} className="col-md-3 mb-4">
+    <div key={index} id={item.item} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
         <img
           src={item.image}
@@ -196,7 +196,7 @@ export default function Menu() {
       <h2 className="h2-menu">Soup/Salad</h2>
       <div className="row justify-content-start" id="soupSalad">
       {soupSaladArray.map((item, index) => (
-        <div key={index} className="col-md-3 mb-4">
+        <div key={index} id={item.item} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -217,7 +217,7 @@ export default function Menu() {
       <h2 className="h2-menu">Sushi Rolls</h2>
       <div className="row justify-content-end" id="rolls">
       {rollsArray.map((item, index) => (
-        <div key={index} className="col-md-4 mb-4">
+        <div key={index} id={item.item} className="col-md-4 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -238,7 +238,7 @@ export default function Menu() {
       <h2 className="h2-menu">Nigiri (ala carte)</h2>
       <div className="row justify-content-start" id="nigiri">
       {nigiriArray.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -259,7 +259,7 @@ export default function Menu() {
       <h2 className="h2-menu">Calzones</h2>
       <div className="row justify-content-center" id="calzones">
       {calzoneArray.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      <div key={index} item={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
@@ -280,7 +280,7 @@ export default function Menu() {
       <h2 className="h2-menu">Pizza</h2>
       <div className="row justify-content-end" id="pizza">
       {pizzaArray.map((item, index) => (
-      <div key={index} className="col-md-3 mb-4">
+      <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
              src={item.image}
