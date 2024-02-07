@@ -6,6 +6,19 @@
   height: 100vh; 
 }
 
+.filtered-items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four items across */
+  gap: 20px; /* Gap between items */
+  margin: 20px auto; /* Margin for the grid container */
+}
+
+.item {
+  padding: 10px; /* Padding for each item */
+  color: whitesmoke;
+  -webkit-text-stroke: 1px black; 
+}
+
 /* Menu.css */
 .card-container {
   perspective: 1000px;

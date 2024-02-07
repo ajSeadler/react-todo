@@ -4,7 +4,7 @@
 import { FaArrowUp } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
-import { Navbar, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
@@ -26,8 +26,24 @@ export default function Menu() {
         item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
       );
+      const filteredSoupSalad = soupSaladArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredRolls = rollsArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredNigiri = nigiriArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredPizza = pizzaArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
       // Combine all filtered arrays into one
-      const allFilteredItems = [...filteredDrinks, ...filteredApps];
+      const allFilteredItems = [...filteredDrinks, ...filteredApps, ...filteredSoupSalad, ...filteredRolls, ...filteredNigiri, ...filteredPizza];
       return allFilteredItems;
     };
 
@@ -38,11 +54,6 @@ export default function Menu() {
   // Function to handle search term change
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
-  };
-
-  // Function to handle item selection in dropdown
-  const handleDropdownSelect = (selectedItem) => {
-    setSearchTerm(selectedItem);
   };
 
   // useEffect to monitor scroll position and determine whether or not to show the arrow button
@@ -70,14 +81,6 @@ export default function Menu() {
         (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
     );
 
-  const filteredDrinks = filterMenuItems(drinksArray);
-  const filteredApps = filterMenuItems(appsArray);
-  const filteredSoupSalad = filterMenuItems(soupSaladArray);
-  const filteredRolls = filterMenuItems(rollsArray);
-  const filteredNigiri = filterMenuItems(nigiriArray);
-  const filteredCalzones = filterMenuItems(calzoneArray);
-  const filteredPizza = filterMenuItems(pizzaArray);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -95,13 +98,19 @@ export default function Menu() {
           style={{ width: "30%", margin: "0 auto", marginTop: "5px" }}
         />
       </Form>
-      {/* Render filtered items only when there's a search term */}
+      {/* Render filtered items in a grid with four items across */}
       {searchTerm.trim() !== "" && (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="filtered-items-grid">
           {filteredItems.map((item, index) => (
-            <div key={index} style={{ margin: '5px 0' }}>
+            <div key={index} className="item">
+                <a key={index} href={`#${item.item}`} className="item">
+              <span><img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="You deserve an appetizer"
+        /></span>
               <span>{item.title}</span>
-              {/* You can add more details here if needed */}
+            </a>
             </div>
           ))}
         </div>
@@ -125,8 +134,8 @@ export default function Menu() {
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
       <h2 className="h2-menu">Drinks</h2>
 <div className="row justify-content-end" id="apps">
-  {filteredDrinks.map((item, index) => (
-    <div key={index} className="col-md-3 mb-4">
+  {drinksArray.map((item, index) => (
+    <div key={index} id={item.item} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
         <img
           src={item.image}
@@ -155,7 +164,7 @@ export default function Menu() {
 </div>
         <h2 className="h2-menu">Appetizers</h2>
 <div className="row justify-content-end" id="apps">
-  {filteredApps.map((item, index) => (
+  {appsArray.map((item, index) => (
     <div key={index} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
         <img
@@ -186,7 +195,7 @@ export default function Menu() {
 
       <h2 className="h2-menu">Soup/Salad</h2>
       <div className="row justify-content-start" id="soupSalad">
-      {filteredSoupSalad.map((item, index) => (
+      {soupSaladArray.map((item, index) => (
         <div key={index} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -207,7 +216,7 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Sushi Rolls</h2>
       <div className="row justify-content-end" id="rolls">
-      {filteredRolls.map((item, index) => (
+      {rollsArray.map((item, index) => (
         <div key={index} className="col-md-4 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -228,7 +237,7 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Nigiri (ala carte)</h2>
       <div className="row justify-content-start" id="nigiri">
-      {filteredNigiri.map((item, index) => (
+      {nigiriArray.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -249,7 +258,7 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Calzones</h2>
       <div className="row justify-content-center" id="calzones">
-      {filteredCalzones.map((item, index) => (
+      {calzoneArray.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
@@ -270,7 +279,7 @@ export default function Menu() {
       </div>
       <h2 className="h2-menu">Pizza</h2>
       <div className="row justify-content-end" id="pizza">
-      {filteredPizza.map((item, index) => (
+      {pizzaArray.map((item, index) => (
       <div key={index} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
            <img
