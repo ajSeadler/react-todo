@@ -4,12 +4,46 @@
 import { FaArrowUp } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Menu() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    // Function to filter menu items
+    const filterMenuItems = () => {
+      // Your filtering logic here based on searchTerm
+      // For example, you can filter drinksArray, appsArray, etc.
+      // and combine them into a single array
+      const filteredDrinks = drinksArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      const filteredApps = appsArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      // Combine all filtered arrays into one
+      const allFilteredItems = [...filteredDrinks, ...filteredApps];
+      return allFilteredItems;
+    };
+
+    // Update filteredItems state
+    setFilteredItems(filterMenuItems());
+  }, [searchTerm]);
+
+  // Function to handle search term change
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Function to handle item selection in dropdown
+  const handleDropdownSelect = (selectedItem) => {
+    setSearchTerm(selectedItem);
+  };
 
   // useEffect to monitor scroll position and determine whether or not to show the arrow button
   useEffect(() => {
@@ -51,16 +85,30 @@ export default function Menu() {
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
-    <Form inline style={{marginTop: "20px"}}>
-          <FormControl
-            type="text"
-            placeholder="Search"
-            className="mr-sm-2"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            style={{width: "30%", margin: "0 auto", marginTop: "5px"}}
-          />
-        </Form>
+    <Form inline style={{ marginTop: "20px" }}>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className="mr-sm-2"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          style={{ width: "30%", margin: "0 auto", marginTop: "5px" }}
+        />
+        {/* Dropdown for displaying filtered items */}
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Filtered Items
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {/* Mapping over filteredItems to display in the dropdown */}
+            {filteredItems.map((item, index) => (
+              <Dropdown.Item key={index} onSelect={() => handleDropdownSelect(item.title)}>
+                {item.title}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+      </Form>
     <Navbar expand="lg" style={{ width: "80%", margin: "0 auto" }}>
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
