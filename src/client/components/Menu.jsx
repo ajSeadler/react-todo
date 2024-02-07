@@ -11,6 +11,12 @@ export default function Menu() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  // Function to handle card click and toggle flipping
+  const handleCardClick = (index) => {
+    setFlippedIndex(index === flippedIndex ? null : index);
+  };
 
   useEffect(() => {
     // Function to filter menu items
@@ -133,44 +139,60 @@ export default function Menu() {
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
       <h2 className="h2-menu">Drinks</h2>
-<div className="row justify-content-end" id="apps">
-  {drinksArray.map((item, index) => (
-    <div key={index} id={item.item} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between">
-        <img
-          src={item.image}
-          className="card-img-top menu-img"
-          alt="You deserve an appetizer"
-        />
-        <div className="card-body">
-          <h3 className="card-title">{item.title}</h3>
-          <p className="card-text">{item.description}</p>
-        </div>
-        <div className="card-text mt-auto">
-        {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
-                {Array.isArray(item.price) ? (
-                  <select>
-                    {item.price.map((price, priceIndex) => (
-                      <option key={priceIndex}>{price}</option>
-                    ))}
-                  </select>
-                ) : (
-                  `Price: $${item.price}`
-                )}
+      <div className="row justify-content-end" id="apps">
+        {drinksArray.map((item, index) => (
+          <div key={index} id={item.item} className="col-md-3 mb-4">
+            <div className={`flip-card ${flippedIndex === index ? 'flipped' : ''}`} onClick={() => handleCardClick(index)}>
+              <div className="flip-card-inner">
+                {/* back of the card */}
+                <div className="card p-3 d-flex flex-column justify-content-between flip-card-back">
+                  <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="enjoy a refreshing beverage"
+                  />
+                  <div className="card-body">
+                    <h3 className="card-title">{item.title}</h3>
+                    <p className="card-text">{item.description}</p>
+                  </div>
+                  <div className="card-text mt-auto">
+                    {/* Using conditional rendering for price */}
+                    {Array.isArray(item.price) ? (
+                      <select>
+                        {item.price.map((price, priceIndex) => (
+                          <option key={priceIndex}>{price}</option>
+                        ))}
+                      </select>
+                    ) : (
+                      `Price: $${item.price}`
+                    )}
+                  </div>
+                </div>
+                {/* front of the card */}
+                <div className="card p-3 d-flex flex-column justify-content-between flip-card-front">
+                  <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="You deserve an appetizer"
+                  />
+                  <div className="card-body">
+                    <h3 className="card-title">{item.title}</h3>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
         <h2 className="h2-menu">Appetizers</h2>
 <div className="row justify-content-end" id="apps">
   {appsArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between">
+      <div className="card p-3 d-flex flex-column justify-content-between flip-card-front">
         <img
           src={item.image}
           className="card-img-top menu-img"
-          alt="You deserve an appetizer"
+          alt="You deserve an appetizer\"
         />
         <div className="card-body">
           <h3 className="card-title">{item.title}</h3>
