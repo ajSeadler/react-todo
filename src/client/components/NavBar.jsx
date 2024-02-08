@@ -25,6 +25,10 @@ export default function NavBar() {
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
         textStroke: '1px black', margin: "20px"}}>Our Story</Nav.Link>
+        <Nav.Link href="/togo" style={{color: "whitesmoke", fontSize: "1.5em", WebkitTextStroke: '1px black',
+        MozTextStroke: '1px black',
+        OTextStroke: '1px black',
+        textStroke: '1px black', margin: "20px"}}>ToGo</Nav.Link>
             <Nav.Link href="/contact" style={{color: "whitesmoke", fontSize: "1.5em", WebkitTextStroke: '1px black',
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
