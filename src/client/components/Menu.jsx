@@ -131,8 +131,8 @@ export default function Menu() {
         </Navbar.Collapse>
       </Navbar>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
-      <h2 className="h2-menu">Drinks</h2>
-      <div className="row justify-content-end" id="apps">
+      <h2 className="h2-menu" id='drinks'>Drinks</h2>
+      <div className="row justify-content-end">
         {drinksArray.map((item, index) => (
           <div key={index} id={item.item} className="col-md-3 mb-4">
             <div className={`flip-card ${flippedIndex === index ? 'flipped' : ''}`} onClick={() => handleCardClick(index)}>
@@ -177,8 +177,8 @@ export default function Menu() {
           </div>
         ))}
       </div>
-        <h2 className="h2-menu">Appetizers</h2>
-<div className="row justify-content-end" id="apps">
+        <h2 className="h2-menu" id="apps">Appetizers</h2>
+<div className="row justify-content-end">
   {appsArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
       <div className="card p-3 d-flex flex-column justify-content-between">
@@ -208,8 +208,8 @@ export default function Menu() {
   ))}
 </div>
 
-      <h2 className="h2-menu">Soup/Salad</h2>
-      <div className="row justify-content-start" id="soupSalad">
+      <h2 className="h2-menu" id="soupSalad">Soup/Salad</h2>
+      <div className="row justify-content-start">
       {soupSaladArray.map((item, index) => (
         <div key={index} id={item.item} className="col-md-3 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
@@ -229,8 +229,8 @@ export default function Menu() {
        </div>
       ))}
       </div>
-      <h2 className="h2-menu">Sushi Rolls</h2>
-      <div className="row justify-content-end" id="rolls">
+      <h2 className="h2-menu" id="rolls">Sushi Rolls</h2>
+      <div className="row justify-content-end">
       {rollsArray.map((item, index) => (
         <div key={index} id={item.item} className="col-md-4 mb-4">
          <div className="card p-3 d-flex flex-column justify-content-between">
@@ -250,8 +250,8 @@ export default function Menu() {
          </div>
       ))}
       </div>
-      <h2 className="h2-menu">Nigiri (ala carte)</h2>
-      <div className="row justify-content-start" id="nigiri">
+      <h2 className="h2-menu" id="nigiri">Nigiri (ala carte)</h2>
+      <div className="row justify-content-start">
       {nigiriArray.map((item, index) => (
       <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
@@ -271,8 +271,8 @@ export default function Menu() {
          </div>
       ))}
       </div>
-      <h2 className="h2-menu">Calzones</h2>
-      <div className="row justify-content-center" id="calzones">
+      <h2 className="h2-menu" id="calzones">Calzones</h2>
+      <div className="row justify-content-center">
       {calzoneArray.map((item, index) => (
       <div key={index} item={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
@@ -292,8 +292,8 @@ export default function Menu() {
          </div>
       ))}
       </div>
-      <h2 className="h2-menu">Pizza</h2>
-      <div className="row justify-content-end" id="pizza">
+      <h2 className="h2-menu" id="pizza">Pizza</h2>
+      <div className="row justify-content-end">
       {pizzaArray.map((item, index) => (
       <div key={index} id={item.item} className="col-md-3 mb-4">
         <div className="card p-3 d-flex flex-column justify-content-between">
