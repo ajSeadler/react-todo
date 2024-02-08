@@ -54,17 +54,17 @@ function Home() {
   return (
     <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100">
       <header className="text-center mb-5">
-        <h1 className="display-4 neonText" style={{fontFamily: "Onick", marginTop: "20px",  WebkitTextStroke: '1px black',
-        MozTextStroke: '1px black',
-        OTextStroke: '1px black',
-        textStroke: '1px black'}}>
-          Collin and Tony's House of Sushi and Pizza
-        </h1>
-        <motion.div
+      <motion.div
     initial={{ opacity: 0, x: -100 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 2, delay: 0.2 }}
   >
+        <h1 className="display-4" style={{fontFamily: "Onick", marginTop: "20px",  WebkitTextStroke: '1px black',
+        MozTextStroke: '1px black',
+        OTextStroke: '1px black',
+        textStroke: '1px black', textShadow: "5px 5px 5px red"}}>
+          Collin and Tony's House of Sushi and Pizza
+        </h1>
         <p className="lead" style={{fontFamily: "Onick", WebkitTextStroke: '1px black',
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
