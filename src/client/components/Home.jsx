@@ -3,6 +3,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap - npm install bootstrap@latest if you're having probs
 import Contact from "./Contact";
+import About from "./About";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
@@ -122,8 +123,7 @@ function Home() {
               </div>
         </section>
 
-        <section className="about-us mb-5" style={{backgroundColor: "#ff00c1"}}>
-          {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
+        {/* <section className="about-us mb-5" style={{backgroundColor: "#ff00c1"}}>
           <h2 className="justify-content-center" style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick", color: "whitesmoke", WebkitTextStroke: '1px black',
         MozTextStroke: '1px black',
         OTextStroke: '1px black',
@@ -139,7 +139,9 @@ function Home() {
             on your taste buds. Better ingredients, better pizza and sushi,
             better Collin and Tony.
           </p>
-        </section>
+        </section> */}
+
+        <About />
 
         <Contact />
       </main>
