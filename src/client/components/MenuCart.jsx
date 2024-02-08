@@ -105,19 +105,19 @@ export default function MenuCart() {
         </Modal.Footer>
       </Modal>
       
-      <h1 className="mt-4" style={{ textDecoration: 'underline' }}>Menu</h1>
+      <h1 className="mt-4" style={{ textDecoration: 'underline', width: "100%", margin: "0 auto", textAlign: "center" }}>Menu</h1>
 
       {/* Drinks Section */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Drinks</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Drinks</h2>
         {drinksArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="enjoy a refreshing beverage"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -139,15 +139,15 @@ export default function MenuCart() {
 
       {/* Appetizers Section */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Appetizers</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Appetizers</h2>
         {appsArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="You deserve an appetizer"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -169,15 +169,15 @@ export default function MenuCart() {
 
                     {/* Soupds & Salads */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Soups & Salad</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Soups & Salad</h2>
         {soupSaladArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="Soup salad both why not?"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -198,15 +198,15 @@ export default function MenuCart() {
       </Row>
 
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Sushi Rolls</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Sushi Rolls</h2>
         {rollsArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="Domo aragato"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -228,15 +228,15 @@ export default function MenuCart() {
 
       {/* Nigiri */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Nigiri</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Nigiri</h2>
         {nigiriArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="It just means fish I think"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -259,15 +259,15 @@ export default function MenuCart() {
 
                   {/* Calzones */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Calzones</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Calzones</h2>
         {calzoneArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
-              <Card.Img
-                variant="top"
-                src={item.image}
-                style={{ maxHeight: "200px" }}
-              />
+            <img
+                    src={item.image}
+                    className="card-img-top menu-img"
+                    alt="enjoy a refreshing beverage"
+                  />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
@@ -289,7 +289,7 @@ export default function MenuCart() {
 
                     {/* pizzas */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Pizza</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Pizza</h2>
         {pizzaArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
