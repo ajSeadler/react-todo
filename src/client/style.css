@@ -151,8 +151,8 @@ color: antiquewhite;
   margin: 0 auto;
 }
 
-.menu-card {
-  height: 100%;
+.card {
+  min-height: 100%;
 }
 
 .menu {
