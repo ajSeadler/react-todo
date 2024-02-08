@@ -76,37 +76,28 @@ function Home() {
           {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
           <h1 style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick"}}>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
-            <div className="card p-3">
+          
+            <div className="card p-3" style={{height: "300px"}}>
+            <a href={`/menu/#${randomRoll.item}`} className="item">
             <img
         src={randomRoll.image}
         className="card-img-top menu-img"
         alt="Today's Sushi special"
       />
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
-        
+        </a>
               </div>
               </div>
           <div className="col-md-6 col-lg-5 mb-4">
-            <div className="card p-3">
+            <div className="card p-3" style={{height: "300px"}}>
+            <a href={`/menu/#${randomPizza.item}`} className="item">
             <img
         src={randomPizza.image}
         className="card-img-top menu-img"
         alt="Today's Pizza special"
       />
         <h3 className="card-title menu-title">{randomPizza.title}</h3>
-        <p className="card-text">{randomPizza.description}</p>
-      <div className="card-text mt-auto">
-        {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
-                {Array.isArray(randomPizza.price) ? (
-                  <select>
-                    {randomPizza.price.map((price, priceIndex) => (
-                      <option key={priceIndex}>{price}</option>
-                    ))}
-                  </select>
-                ) : (
-                  `Price: $${randomPizza.price}`
-                )}
-              </div>
+        </a>
               </div>
               </div>
         </section>
