@@ -130,7 +130,7 @@ export default function Menu() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <div className="container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 menu">
+      <div className="container-fluid d-flex flex-column min-vh-100 menu">
       <h2 className="h2-menu" id='drinks'>Drinks</h2>
       <div className="row justify-content-end">
         {drinksArray.map((item, index) => (

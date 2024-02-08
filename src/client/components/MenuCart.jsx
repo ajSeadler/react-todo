@@ -109,7 +109,7 @@ export default function MenuCart() {
 
       {/* Drinks Section */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Drinks</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Drinks</h2>
         {drinksArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -139,7 +139,7 @@ export default function MenuCart() {
 
       {/* Appetizers Section */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Appetizers</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Appetizers</h2>
         {appsArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -169,7 +169,7 @@ export default function MenuCart() {
 
                     {/* Soupds & Salads */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Soups & Salad</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Soups & Salad</h2>
         {soupSaladArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -198,7 +198,7 @@ export default function MenuCart() {
       </Row>
 
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Sushi Rolls</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Sushi Rolls</h2>
         {rollsArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -228,7 +228,7 @@ export default function MenuCart() {
 
       {/* Nigiri */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Nigiri</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Nigiri</h2>
         {nigiriArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -259,7 +259,7 @@ export default function MenuCart() {
 
                   {/* Calzones */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Calzones</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Calzones</h2>
         {calzoneArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
@@ -289,7 +289,7 @@ export default function MenuCart() {
 
                     {/* pizzas */}
       <Row>
-        <h2 className="mt-4" style={{ color: '#fff' }}>Pizza</h2>
+        <h2 className="mt-4 h2-menu" style={{ color: '#fff' }}>Pizza</h2>
         {pizzaArray.map((item, index) => (
           <Col md={4} key={item.item} className="mb-4">
             <Card>
