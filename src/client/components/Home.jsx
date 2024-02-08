@@ -83,19 +83,7 @@ function Home() {
         alt="Today's Sushi special"
       />
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
-        <p className="card-text" >{randomRoll.description}</p>
-      <div className="card-text mt-auto">
-        {/* using conditional rendering here so that if the price is an array, due to there being options, it displays the array.  If not, it just displays the regular price. */}
-                {Array.isArray(randomRoll.price) ? (
-                  <select>
-                    {randomRoll.price.map((price, priceIndex) => (
-                      <option key={priceIndex}>{price}</option>
-                    ))}
-                  </select>
-                ) : (
-                  `Price: $${randomRoll.price}`
-                )}
-              </div>
+        
               </div>
               </div>
           <div className="col-md-6 col-lg-5 mb-4">
