@@ -80,13 +80,6 @@ export default function Menu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const filterMenuItems = (menuArray) =>
-    menuArray.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

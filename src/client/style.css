@@ -162,6 +162,7 @@ body {
   text-align: center;
   -webkit-text-stroke: 1px black; 
   color: whitesmoke;
+  background-color: #ff6ec7;
 }
 
 Nav.Link {
