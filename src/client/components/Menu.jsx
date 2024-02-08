@@ -111,7 +111,7 @@ export default function Menu() {
     <Navbar expand="lg" style={{ width: "80%", margin: "0 auto" }}>
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
           {/* about us will obvoulsy be its own component. we can use it inside the home component though if we wanted to */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor: "#ff00c1", border: "2px 2px solid white", margin: "0"}} />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor: "#ff00c1", border: "2px 2px solid white", margin: "0 auto"}} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" style={{ alignItems: "center", margin: "0 auto" }}>
             <Nav.Link href="#drinks" className="menu-nav-link">Drinks</Nav.Link>
