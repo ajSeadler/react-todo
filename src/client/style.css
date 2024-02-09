@@ -52,6 +52,13 @@ body {
   font-size: 5em;
 }
 
+/* Media query for smaller viewports */
+@media screen and (max-width: 768px) {
+  .h2-menu {
+    font-size: 10vw; /* Set font size relative to viewport width */
+  }
+}
+
 .Menu p {
   font-family: Arial, Helvetica, sans-serif;
 }
