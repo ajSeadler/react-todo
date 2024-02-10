@@ -7,6 +7,7 @@ import About from "./About";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
+import { Card } from "react-bootstrap";
 
 function Home() {
 
@@ -123,6 +124,7 @@ function Home() {
         <About />
 
         <Contact />
+   
       </main>
     </div>
   );
