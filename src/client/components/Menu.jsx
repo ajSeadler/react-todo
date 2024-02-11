@@ -43,8 +43,12 @@ export default function Menu() {
         item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
       );
+      const filteredDessert = dessertArray.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
       // Combine all filtered arrays into one
-      const allFilteredItems = [...filteredDrinks, ...filteredApps, ...filteredSoupSalad, ...filteredRolls, ...filteredNigiri, ...filteredPizza];
+      const allFilteredItems = [...filteredDrinks, ...filteredApps, ...filteredSoupSalad, ...filteredRolls, ...filteredNigiri, ...filteredPizza, ...filteredDessert];
       return allFilteredItems;
     };
 
@@ -122,6 +126,7 @@ export default function Menu() {
             <Nav.Link href="#nigiri" className="menu-nav-link">Nigiri</Nav.Link>
             <Nav.Link href="#calzones" className="menu-nav-link">Calzones</Nav.Link>
             <Nav.Link href="#pizza" className="menu-nav-link">Pizza</Nav.Link>
+            <Nav.Link href="#dessert" className="menu-nav-link">Desserts</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -293,6 +298,27 @@ export default function Menu() {
                 <option key={priceIndex}>{price}</option>
               ))}
             </select></p>
+           </div>
+         </div>
+      ))}
+      </div>
+      <h2 className="h2-menu" id="dessert">Desserts</h2>
+      <div className="row justify-content-center">
+      {dessertArray.map((item, index) => (
+      <div key={index} item={item.item} className="col-md-3 mb-4">
+        <div className="card p-3 d-flex flex-column justify-content-between">
+           <img
+             src={item.image}
+             className="card-img-top menu-img"
+             alt="It's like a sandwich but for italians and also they already have sandwiches and they're better than calzones."
+           />
+           <div className="card-body">
+             <h3 className="card-title">{item.title}</h3>
+             <p className="card-text">
+               {item.description}
+             </p>
+             </div>
+             <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
          </div>
       ))}
