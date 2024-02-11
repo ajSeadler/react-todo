@@ -89,7 +89,7 @@ function Home() {
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
      
               </div>
-              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "400px"}}>
+              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "600px"}}>
            
         <h1 className="card-title menu-title">{randomRoll.title}</h1>
         <p style={{"fontFamily": "courier"}}>{randomRoll.description}</p>
@@ -112,16 +112,37 @@ function Home() {
               </div>
               
           <div className="col-md-6 col-lg-5 mb-4">
-            <div className="card p-3" style={{height: "300px"}}>
-            <a href={`/menu/#${randomPizza.item}`} className="item">
+          <ReactCardFlip isFlipped={flip}
+        flipDirection="horizontal">
+            <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "300px"}}>
             <img
         src={randomPizza.image}
         className="card-img-top menu-img"
         alt="Today's Pizza special"
       />
         <h3 className="card-title menu-title">{randomPizza.title}</h3>
-        </a>
+     
               </div>
+              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "600px"}}>
+           
+        <h1 className="card-title menu-title">{randomPizza.title}</h1>
+        <p style={{"fontFamily": "courier"}}>{randomPizza.description}</p>
+        {Array.isArray(randomPizza.price) ? (
+                  <select>
+                    {randomPizza.price.map((price, priceIndex) => (
+                      <option key={priceIndex}>{price}</option>
+                    ))}
+                  </select>
+                ) : (
+                  `Price: $${randomPizza.price}`
+                )}
+                <img
+        src={randomPizza.image}
+        className="card-img-top menu-img"
+        alt="Today's Sushi special"
+      />
+              </div>
+              </ReactCardFlip>
               </div>
         </section>
 
