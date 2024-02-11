@@ -80,7 +80,8 @@ const menuArray = [
 {"item": "46", "title": "Meat Lover's Pizza", "description": "A masterpiece of hearty, high-quality meats including pepperoni, savory sausage, real beef, hickory-smoked bacon, and julienne-cut Canadian bacon, all topped with real cheese made from mozzarella.", "image": "https://www.papajohns.com/static-assets/a/images/web/product/pizzas/the-meats-slate-compressed.jpg", "price": ["12 Inch - 19.99", "14 inch - 21.99", "16 inch - 24.99"]},
 {"item": "47", "title": "Philly Cheesesteak Pizza", "description": "Whether you’re a native Philadelphian or still waiting to visit the City of Brotherly Love, “youse” can enjoy an elevated form of the classic Philly cheesesteak in this original tribute to the king of hot sandwiches, the Papa John’s Philly Cheesesteak pizza. Considered by its fans to be one of the best Papa John’s pizza varieties, this meaty and cheesy triumph will keep the party going all night long. For a flavorful treat that would satisfy even the Philly Phanatic, try the Philly Cheesesteak pizza from Papa John’s.", "image": "https://www.papajohns.com/assets/img/pizzas/philly-cheesesteak.jpg", "price": ["12 Inch - 19.99", "14 inch - 21.99", "16 inch - 24.99"]},
 {"item": "48", "title": "Bacon Chicken Pizza", "description": "We had you at bacon, right? It gets even better. Zesty BBQ sauce adds a tangy twist to this irresistible pizza topped with grilled all-white chicken, bacon and fresh-sliced onions. Round one up today.", "image": "https://www.papajohns.com/assets/img/pizzas/bbq-chicken-bacon.jpg", "price": ["12 Inch - 19.99", "14 inch - 21.99", "16 inch - 24.99"]}
-]
+],
+[{"item": "49", "title": "Mochi Ice Cream Bites", "image": "https://www.justonecookbook.com/wp-content/uploads/2020/08/Mochi-Ice-Cream-8680-I.jpg"}]
 ]
 
 const drinksArray = menuArray[0];
@@ -89,6 +90,7 @@ const soupSaladArray = menuArray[2];
 const rollsArray = menuArray[3];
 const nigiriArray = menuArray[4];
 const calzoneArray = menuArray[5];
-const pizzaArray = menuArray[6]
+const pizzaArray = menuArray[6];
+const dessertArray = menuArray[7];
 
-export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray };
+export { menuArray, drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray, dessertArray };
