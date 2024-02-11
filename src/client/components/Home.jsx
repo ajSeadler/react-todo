@@ -78,16 +78,37 @@ function Home() {
           {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
           <h1 style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick"}}>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
-            <div className="card p-3" style={{height: "300px"}}>
-            <a href={`/menu/#${randomRoll.item}`} className="item">
+          <ReactCardFlip isFlipped={flip}
+        flipDirection="horizontal">
+            <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "300px"}}>
             <img
         src={randomRoll.image}
         className="card-img-top menu-img"
         alt="Today's Sushi special"
       />
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
-        </a>
+     
               </div>
+              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "400px"}}>
+           
+        <h1 className="card-title menu-title">{randomRoll.title}</h1>
+        <p style={{"fontFamily": "courier"}}>{randomRoll.description}</p>
+        {Array.isArray(randomRoll.price) ? (
+                  <select>
+                    {randomRoll.price.map((price, priceIndex) => (
+                      <option key={priceIndex}>{price}</option>
+                    ))}
+                  </select>
+                ) : (
+                  `Price: $${randomRoll.price}`
+                )}
+                <img
+        src={randomRoll.image}
+        className="card-img-top menu-img"
+        alt="Today's Sushi special"
+      />
+              </div>
+              </ReactCardFlip>
               </div>
               
           <div className="col-md-6 col-lg-5 mb-4">
