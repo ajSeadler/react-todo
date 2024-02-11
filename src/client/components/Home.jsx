@@ -89,7 +89,7 @@ function Home() {
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
      
               </div>
-              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "600px"}}>
+              <div className="card p-3" onClick={() => setFlip(!flip)} style={{minHeight: "300px"}}>
            
         <h1 className="card-title menu-title">{randomRoll.title}</h1>
         <p style={{"fontFamily": "courier"}}>{randomRoll.description}</p>
@@ -106,6 +106,7 @@ function Home() {
         src={randomRoll.image}
         className="card-img-top menu-img"
         alt="Today's Sushi special"
+        style={{marginTop: "10px"}}
       />
               </div>
               </ReactCardFlip>
@@ -123,7 +124,7 @@ function Home() {
         <h3 className="card-title menu-title">{randomPizza.title}</h3>
      
               </div>
-              <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "600px"}}>
+              <div className="card p-3" onClick={() => setFlip(!flip)} style={{minHeight: "300px"}}>
            
         <h1 className="card-title menu-title">{randomPizza.title}</h1>
         <p style={{"fontFamily": "courier"}}>{randomPizza.description}</p>
@@ -139,7 +140,8 @@ function Home() {
                 <img
         src={randomPizza.image}
         className="card-img-top menu-img"
-        alt="Today's Sushi special"
+        alt="Today's Pizza special"
+        style={{marginTop: "10px"}}
       />
               </div>
               </ReactCardFlip>
