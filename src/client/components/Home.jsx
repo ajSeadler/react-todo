@@ -4,15 +4,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap - npm install bootstrap@latest if you're having probs
 import Contact from "./Contact";
 import About from "./About";
+import ReactCardFlip from "react-card-flip";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
-import { Card } from "react-bootstrap";
 
 function Home() {
 
   const [randomRoll, setRandomRoll] = useState("");
   const [randomPizza, setRandomPizza] = useState("");
+    const [flip, setFlip] = useState(false)
   
 
   // Function to generate a random roll and a random pizza for today's special.
@@ -77,7 +78,6 @@ function Home() {
           {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
           <h1 style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick"}}>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
-          
             <div className="card p-3" style={{height: "300px"}}>
             <a href={`/menu/#${randomRoll.item}`} className="item">
             <img
@@ -89,6 +89,7 @@ function Home() {
         </a>
               </div>
               </div>
+              
           <div className="col-md-6 col-lg-5 mb-4">
             <div className="card p-3" style={{height: "300px"}}>
             <a href={`/menu/#${randomPizza.item}`} className="item">
@@ -102,6 +103,9 @@ function Home() {
               </div>
               </div>
         </section>
+
+
+
 
         {/* <section className="about-us mb-5" style={{backgroundColor: "#ff00c1"}}>
           <h2 className="justify-content-center" style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick", color: "whitesmoke", WebkitTextStroke: '1px black',
