@@ -12,6 +12,7 @@ export default function Menu() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
+  const [drinksFlip, setDrinksFlip] = useState(false);
 
   useEffect(() => {
     // Function to filter menu items
@@ -51,6 +52,8 @@ export default function Menu() {
       const allFilteredItems = [...filteredDrinks, ...filteredApps, ...filteredSoupSalad, ...filteredRolls, ...filteredNigiri, ...filteredPizza, ...filteredDessert];
       return allFilteredItems;
     };
+
+    
 
     // Update filteredItems state
     setFilteredItems(filterMenuItems());
@@ -136,7 +139,8 @@ export default function Menu() {
 <div className="row justify-content-end">
   {drinksArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between">
+      <ReactCardFlip isFlipped={drinksFlip} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column justify-content-between" onClick={() => setDrinksFlip(!drinksFlip)}>
         <img
           src={item.image}
           className="card-img-top menu-img"
@@ -159,6 +163,7 @@ export default function Menu() {
                 )}
               </div>
       </div>
+      </ReactCardFlip>
     </div>
   ))}
 </div>
