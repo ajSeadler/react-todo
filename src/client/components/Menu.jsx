@@ -140,15 +140,16 @@ export default function Menu() {
   {drinksArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
       <ReactCardFlip isFlipped={drinksFlip} flipDirection='horizontal'>
-      <div className="card p-3 d-flex flex-column justify-content-between" style={{height: "100%"}} onClick={() => setDrinksFlip(!drinksFlip)}> 
+      <div className="card p-3 d-flex flex-column" style={{minHeight: "350px"}} onClick={() => setDrinksFlip(!drinksFlip)}> 
+      <h1 className='card-title'>{item.title}</h1>
       <img
           src={item.image}
           className="card-img-top menu-img"
           alt="Enjoy a tasty beverage"
         />
-        <h1 className='card-title'>{item.title}</h1>
         </div>
-      <div className="card p-3 d-flex flex-column justify-content-between" style={{height: "100%"}} onClick={() => setDrinksFlip(!drinksFlip)}>
+      
+      <div className="card p-3 d-flex flex-column justify-content-between" style={{minHeight: "600px"}} onClick={() => setDrinksFlip(!drinksFlip)}>
         <img
           src={item.image}
           className="card-img-top menu-img"
