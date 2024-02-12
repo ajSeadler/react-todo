@@ -7,13 +7,14 @@ import About from "./About";
 import ReactCardFlip from "react-card-flip";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { drinksArray, appsArray, soupSaladArray, rollsArray, nigiriArray, calzoneArray, pizzaArray } from "./MenuArray";
+import { rollsArray, pizzaArray } from "./MenuArray";
 
 function Home() {
 
   const [randomRoll, setRandomRoll] = useState("");
   const [randomPizza, setRandomPizza] = useState("");
-    const [flip, setFlip] = useState(false)
+  const [sushiFlip, setSushiFlip] = useState(false);
+  const [pizzaFlip, setPizzaFlip] = useState(false);
   
 
   // Function to generate a random roll and a random pizza for today's special.
@@ -78,9 +79,9 @@ function Home() {
           {/* specials will be its own component thay way it's easier to update( in a real world setting) */}
           <h1 style={{margin: "0 auto", textAlign: "center", fontFamily: "Onick"}}>Today's Specials</h1>
           <div className="col-md-6 col-lg-5 mb-4">
-          <ReactCardFlip isFlipped={flip}
+          <ReactCardFlip isFlipped={sushiFlip}
         flipDirection="horizontal">
-            <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "300px"}}>
+            <div className="card p-3" onClick={() => setSushiFlip(!sushiFlip)} style={{height: "300px"}}>
             <img
         src={randomRoll.image}
         className="card-img-top menu-img"
@@ -89,7 +90,7 @@ function Home() {
         <h3 className="card-title menu-title">{randomRoll.title}</h3>
      
               </div>
-              <div className="card p-3" onClick={() => setFlip(!flip)} style={{minHeight: "300px"}}>
+              <div className="card p-3" onClick={() => setSushiFlip(!sushiFlip)} style={{minHeight: "300px"}}>
            
         <h1 className="card-title menu-title">{randomRoll.title}</h1>
         <p style={{"fontFamily": "courier"}}>{randomRoll.description}</p>
@@ -113,9 +114,9 @@ function Home() {
               </div>
               
           <div className="col-md-6 col-lg-5 mb-4">
-          <ReactCardFlip isFlipped={flip}
+          <ReactCardFlip isFlipped={pizzaFlip}
         flipDirection="horizontal">
-            <div className="card p-3" onClick={() => setFlip(!flip)} style={{height: "300px"}}>
+            <div className="card p-3" onClick={() => setPizzaFlip(!pizzaFlip)} style={{height: "300px"}}>
             <img
         src={randomPizza.image}
         className="card-img-top menu-img"
@@ -124,7 +125,7 @@ function Home() {
         <h3 className="card-title menu-title">{randomPizza.title}</h3>
      
               </div>
-              <div className="card p-3" onClick={() => setFlip(!flip)} style={{minHeight: "300px"}}>
+              <div className="card p-3" onClick={() => setPizzaFlip(!pizzaFlip)} style={{minHeight: "300px"}}>
            
         <h1 className="card-title menu-title">{randomPizza.title}</h1>
         <p style={{"fontFamily": "courier"}}>{randomPizza.description}</p>
