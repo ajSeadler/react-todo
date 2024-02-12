@@ -140,8 +140,8 @@ export default function Menu() {
   {drinksArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
       <ReactCardFlip isFlipped={drinksFlip} flipDirection='horizontal'>
-      <div className="card p-3 d-flex flex-column" style={{minHeight: "350px"}} onClick={() => setDrinksFlip(!drinksFlip)}> 
-      <h1 className='card-title'>{item.title}</h1>
+      <div className="card p-3 d-flex flex-column" style={{minHeight: "200px"}} onClick={() => setDrinksFlip(!drinksFlip)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
       <img
           src={item.image}
           className="card-img-top menu-img"
