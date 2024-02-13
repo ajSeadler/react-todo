@@ -14,6 +14,7 @@ export default function Menu() {
   const [showScroll, setShowScroll] = useState(false);
   const [flippedCards, setFlippedCards] = useState(Array(drinksArray.length).fill(false));
   const [flippedApps, setFlippedApps] = useState(Array(appsArray.length).fill(false));
+  const [flippedSoupSalad, setFlippedSoupSalad] = useState(Array(appsArray.length).fill(false));
 
   useEffect(() => {
     // Function to filter menu items
@@ -97,6 +98,12 @@ export default function Menu() {
     const newFlippedApps = [...flippedApps];
     newFlippedApps[index] = !newFlippedApps[index];
     setFlippedApps(newFlippedApps);
+  };
+
+  const handleSoupSaladClick = (index) => {
+    const newFlippedSoupSalad = [...flippedSoupSalad];
+    newFlippedSoupSalad[index] = !newFlippedSoupSalad[index];
+    setFlippedSoupSalad(newFlippedSoupSalad);
   };
 
   return (
@@ -236,7 +243,16 @@ export default function Menu() {
       <div className="row justify-content-start">
       {soupSaladArray.map((item, index) => (
         <div key={index} id={item.item} className="col-md-3 mb-4">
-         <div className="card p-3 d-flex flex-column justify-content-between">
+          <ReactCardFlip isFlipped={flippedSoupSalad[index]} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column" style={{ minHeight: "300px" }} onClick={() => handleSoupSaladClick(index)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
+      <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="Soup AND Salad?  In this economy?"
+        />
+        </div>
+         <div className="card p-3 d-flex flex-column justify-content-between" onClick={() => handleSoupSaladClick(index)} style={{minHeight: "600px"}}>
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -250,6 +266,7 @@ export default function Menu() {
              </div>
              <p className="card-text mt-auto">Price: ${item.price}</p>
          </div>
+         </ReactCardFlip>
        </div>
       ))}
       </div>
