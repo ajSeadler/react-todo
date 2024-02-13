@@ -16,9 +16,10 @@ export default function Menu() {
   const [flippedApps, setFlippedApps] = useState(Array(appsArray.length).fill(false));
   const [flippedSoupSalad, setFlippedSoupSalad] = useState(Array(appsArray.length).fill(false));
   const [flippedRolls, setFlippedRolls] = useState(Array(rollsArray.length).fill(false));
-  const [flippedNigiri, setFlippedNigiri] = useState(Array(rollsArray.length).fill(false));
-  const [flippedCalzone, setFlippedCalzone] = useState(Array(rollsArray.length).fill(false));
-  const [flippedPizza, setFlippedPizza] = useState(Array(rollsArray.length).fill(false));
+  const [flippedNigiri, setFlippedNigiri] = useState(Array(nigiriArray.length).fill(false));
+  const [flippedCalzone, setFlippedCalzone] = useState(Array(calzoneArray.length).fill(false));
+  const [flippedPizza, setFlippedPizza] = useState(Array(pizzaArray.length).fill(false));
+  const [flippedDessert, setFlippedDessert] = useState(Array(dessertArray.length).fill(false));
 
 
   useEffect(() => {
@@ -133,6 +134,12 @@ export default function Menu() {
     const newFlippedPizza = [...flippedPizza];
     newFlippedPizza[index] = !newFlippedPizza[index];
     setFlippedPizza(newFlippedPizza);
+  };
+
+  const handleDessertClick = (index) => {
+    const newFlippedDessert = [...flippedDessert];
+    newFlippedDessert[index] = !newFlippedDessert[index];
+    setFlippedDessert(newFlippedDessert);
   };
 
   return (
@@ -432,15 +439,27 @@ export default function Menu() {
          </div>
       ))}
       </div>
+
       <h2 className="h2-menu" id="dessert">Desserts</h2>
       <div className="row justify-content-center">
       {dessertArray.map((item, index) => (
       <div key={index} item={item.item} className="col-md-3 mb-4">
-        <div className="card p-3 d-flex flex-column justify-content-between">
+
+<ReactCardFlip isFlipped={flippedDessert[index]} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column" style={{ minHeight: "300px" }} onClick={() => handleDessertClick(index)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
+      <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="Satisfy your sweet tooth"
+        />
+        </div>
+
+        <div className="card p-3 d-flex flex-column justify-content-between" style={{ minHeight: "600px" }} onClick={() => handleDessertClick(index)}>
            <img
              src={item.image}
              className="card-img-top menu-img"
-             alt="It's like a sandwich but for italians and also they already have sandwiches and they're better than calzones."
+             alt="This will make you fat"
            />
            <div className="card-body">
              <h3 className="card-title">{item.title}</h3>
@@ -450,6 +469,7 @@ export default function Menu() {
              </div>
              <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
+           </ReactCardFlip>
          </div>
       ))}
       </div>
