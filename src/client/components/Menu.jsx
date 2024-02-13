@@ -13,6 +13,7 @@ export default function Menu() {
   const [filteredItems, setFilteredItems] = useState([]);
   const [showScroll, setShowScroll] = useState(false);
   const [flippedCards, setFlippedCards] = useState(Array(drinksArray.length).fill(false));
+  const [flippedApps, setFlippedApps] = useState(Array(appsArray.length).fill(false));
 
   useEffect(() => {
     // Function to filter menu items
@@ -92,6 +93,12 @@ export default function Menu() {
     setFlippedCards(newFlippedCards);
   };
 
+  const handleAppsClick = (index) => {
+    const newFlippedApps = [...flippedApps];
+    newFlippedApps[index] = !newFlippedApps[index];
+    setFlippedApps(newFlippedApps);
+  };
+
   return (
     <>
     {/* Stole most of this from the specials on the home page cause it's pretty clea and utilitarian.   But I'll need to work on the max height for the images so they're uniform */}
@@ -155,6 +162,7 @@ export default function Menu() {
         />
         </div>
       
+      
       <div className="card p-3 d-flex flex-column justify-content-between" style={{minHeight: "600px"}} onClick={() => handleCardClick(index)}>
         <img
           src={item.image}
@@ -186,11 +194,21 @@ export default function Menu() {
 <div className="row justify-content-end">
   {appsArray.map((item, index) => (
     <div key={index} id={item.item} className="col-md-3 mb-4">
-      <div className="card p-3 d-flex flex-column justify-content-between">
+       <ReactCardFlip isFlipped={flippedApps[index]} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column" style={{ minHeight: "300px" }} onClick={() => handleAppsClick(index)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
+      <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="You deserve an appetizer"
+        />
+        </div>
+      
+      <div className="card p-3 d-flex flex-column justify-content-between" style={{minHeight: "600px"}} onClick={() => handleAppsClick(index)}>
         <img
           src={item.image}
           className="card-img-top menu-img"
-          alt="You deserve an appetizer\"
+          alt="You deserve an appetizer"
         />
         <div className="card-body">
           <h3 className="card-title">{item.title}</h3>
@@ -209,6 +227,7 @@ export default function Menu() {
                 )}
               </div>
       </div>
+      </ReactCardFlip>
     </div>
   ))}
 </div>
