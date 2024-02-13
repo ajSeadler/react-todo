@@ -15,6 +15,8 @@ export default function Menu() {
   const [flippedCards, setFlippedCards] = useState(Array(drinksArray.length).fill(false));
   const [flippedApps, setFlippedApps] = useState(Array(appsArray.length).fill(false));
   const [flippedSoupSalad, setFlippedSoupSalad] = useState(Array(appsArray.length).fill(false));
+  const [flippedRolls, setFlippedRolls] = useState(Array(rollsArray.length).fill(false));
+  const [flippedNigiri, setFlippedNigiri] = useState(Array(rollsArray.length).fill(false));
 
   useEffect(() => {
     // Function to filter menu items
@@ -104,6 +106,12 @@ export default function Menu() {
     const newFlippedSoupSalad = [...flippedSoupSalad];
     newFlippedSoupSalad[index] = !newFlippedSoupSalad[index];
     setFlippedSoupSalad(newFlippedSoupSalad);
+  };
+
+  const handleRollsClick = (index) => {
+    const newFlippedRolls = [...flippedRolls];
+    newFlippedRolls[index] = !newFlippedRolls[index];
+    setFlippedRolls(newFlippedRolls);
   };
 
   return (
@@ -274,7 +282,16 @@ export default function Menu() {
       <div className="row justify-content-end">
       {rollsArray.map((item, index) => (
         <div key={index} id={item.item} className="col-md-4 mb-4">
-         <div className="card p-3 d-flex flex-column justify-content-between">
+           <ReactCardFlip isFlipped={flippedRolls[index]} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column" style={{ minHeight: "300px" }} onClick={() => handleRollsClick(index)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
+      <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="Enjoy a tasty sushi roll"
+        />
+        </div>
+         <div className="card p-3 d-flex flex-column justify-content-between" style={{minHeight: "450px"}} onClick={() => handleRollsClick(index)}>
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -288,6 +305,7 @@ export default function Menu() {
              </div>
              <p className="card-text mt-auto">Price: ${item.price}</p>
            </div>
+           </ReactCardFlip>
          </div>
       ))}
       </div>
