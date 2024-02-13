@@ -18,6 +18,8 @@ export default function Menu() {
   const [flippedRolls, setFlippedRolls] = useState(Array(rollsArray.length).fill(false));
   const [flippedNigiri, setFlippedNigiri] = useState(Array(rollsArray.length).fill(false));
   const [flippedCalzone, setFlippedCalzone] = useState(Array(rollsArray.length).fill(false));
+  const [flippedPizza, setFlippedPizza] = useState(Array(rollsArray.length).fill(false));
+
 
   useEffect(() => {
     // Function to filter menu items
@@ -125,6 +127,12 @@ export default function Menu() {
     const newFlippedCalzone = [...flippedCalzone];
     newFlippedCalzone[index] = !newFlippedCalzone[index];
     setFlippedCalzone(newFlippedCalzone);
+  };
+
+  const handlePizzaClick = (index) => {
+    const newFlippedPizza = [...flippedPizza];
+    newFlippedPizza[index] = !newFlippedPizza[index];
+    setFlippedPizza(newFlippedPizza);
   };
 
   return (
@@ -390,7 +398,19 @@ export default function Menu() {
       <div className="row justify-content-end">
       {pizzaArray.map((item, index) => (
       <div key={index} id={item.item} className="col-md-3 mb-4">
-        <div className="card p-3 d-flex flex-column justify-content-between">
+
+<ReactCardFlip isFlipped={flippedPizza[index]} flipDirection='horizontal'>
+      <div className="card p-3 d-flex flex-column" style={{ minHeight: "300px" }} onClick={() => handlePizzaClick(index)}> 
+      <h1 className='card-title' style={{fontSize: "1em"}} >{item.title}</h1>
+      <img
+          src={item.image}
+          className="card-img-top menu-img"
+          alt="Mamma mia pizza pie!"
+        />
+        </div>
+
+
+        <div className="card p-3 d-flex flex-column justify-content-between" style={{ minHeight: "600px" }} onClick={() => handlePizzaClick(index)}>
            <img
              src={item.image}
              className="card-img-top menu-img"
@@ -408,6 +428,7 @@ export default function Menu() {
               ))}
             </select></p>
            </div>
+           </ReactCardFlip>
          </div>
       ))}
       </div>
